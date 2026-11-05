@@ -1,0 +1,10318 @@
+/* =========================================
+   PHYSIOCARE CLINIC
+   GLOBAL STYLES
+========================================= */
+
+:root {
+    --primary: #063358;
+    --primary-dark: #032641;
+    --accent: #48a900;
+    --accent-dark: #398800;
+
+    --white: #ffffff;
+    --light-bg: #f4f7f9;
+
+    --text: #263747;
+    --muted: #687782;
+    --border: #e9eef1;
+
+    --font-main: 'DM Sans', sans-serif;
+}
+
+/* =========================================
+   GLOBAL RESET
+========================================= */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--text);
+    background: var(--white);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.site-header {
+    position: relative;
+    z-index: 1000;
+
+    width: 100%;
+    background: var(--white);
+
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 3px 20px rgba(6, 51, 88, 0.045);
+}
+
+/* =========================================
+   HEADER CONTAINER
+========================================= */
+
+.header-container {
+    max-width: 1320px;
+    height: 100px;
+
+    margin: 0 auto;
+    padding: 0 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 35px;
+}
+
+/* =========================================
+   HEADER LOGO
+========================================= */
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.header-logo img {
+    display: block;
+
+    width: 215px;
+    height: auto;
+    object-fit: contain;
+
+    transition: transform 0.3s ease;
+}
+
+.header-logo:hover img {
+    transform: scale(1.025);
+}
+
+/* =========================================
+   DESKTOP NAVIGATION
+========================================= */
+
+.desktop-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 42px;
+    margin-left: auto;
+}
+
+.nav-link {
+    position: relative;
+
+    display: inline-block;
+    padding: 12px 0;
+
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
+
+    color: var(--primary);
+    white-space: nowrap;
+
+    transition: color 0.3s ease;
+}
+
+/* Navigation Underline */
+
+.nav-link::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: 3px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--accent);
+
+    transition: width 0.3s ease;
+}
+
+/* Navigation Hover / Active */
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--accent-dark);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* =========================================
+   HAMBURGER BUTTON
+========================================= */
+
+.menu-toggle {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.menu-toggle span {
+    display: block;
+
+    width: 26px;
+    height: 2px;
+
+    background: var(--primary);
+    border-radius: 5px;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+/* Hamburger Open Animation */
+
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* =========================================
+   MOBILE NAVIGATION DEFAULT
+========================================= */
+
+.mobile-nav {
+    display: none;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.site-footer {
+    width: 100%;
+    background: var(--white);
+
+    border-top: 1px solid var(--border);
+}
+
+/* =========================================
+   FOOTER CONTAINER
+========================================= */
+
+.footer-container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 65px 35px;
+
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+}
+
+/* =========================================
+   FOOTER LOGO
+========================================= */
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.footer-brand a {
+    display: inline-flex;
+    align-items: center;
+}
+
+.footer-brand img {
+    display: block;
+
+    width: 215px;
+    height: auto;
+    object-fit: contain;
+
+    transition: transform 0.3s ease;
+}
+
+.footer-brand img:hover {
+    transform: scale(1.025);
+}
+
+/* =========================================
+   FOOTER INFORMATION
+========================================= */
+
+.footer-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-info h3 {
+    position: relative;
+
+    margin-bottom: 23px;
+    padding-bottom: 12px;
+
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+
+    color: var(--primary);
+}
+
+/* Green Underline */
+
+.footer-info h3::after {
+    content: "";
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 35px;
+    height: 2px;
+
+    background: var(--accent);
+}
+
+/* =========================================
+   FOOTER ADDRESS
+========================================= */
+
+.footer-address p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.9;
+
+    color: var(--muted);
+}
+
+/* =========================================
+   FOOTER CONTACT
+========================================= */
+
+.footer-contact {
+    gap: 12px;
+}
+
+.footer-contact h3 {
+    margin-bottom: 8px;
+}
+
+.footer-contact a {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.8;
+
+    color: var(--muted);
+    overflow-wrap: anywhere;
+
+    transition: color 0.3s ease;
+}
+
+.footer-contact a:hover {
+    color: var(--accent-dark);
+}
+
+/* =========================================
+   LARGE TABLET
+   MAX WIDTH: 1100px
+========================================= */
+
+@media (max-width: 1100px) {
+
+    /* Header */
+
+    .header-container {
+        height: 88px;
+        padding: 0 25px;
+        gap: 20px;
+    }
+
+    .header-logo img {
+        width: 180px;
+    }
+
+    .desktop-nav {
+        gap: 25px;
+    }
+
+    .nav-link {
+        font-size: 12px;
+        letter-spacing: 0.5px;
+    }
+
+    /* Footer */
+
+    .footer-container {
+        padding: 55px 25px;
+        gap: 35px;
+        grid-template-columns: 1.2fr 1fr 1fr;
+    }
+
+    .footer-brand img {
+        width: 180px;
+    }
+
+    .footer-address p,
+    .footer-contact a {
+        font-size: 13px;
+    }
+
+}
+
+/* =========================================
+   TABLET AND MOBILE NAVIGATION
+   MAX WIDTH: 900px
+========================================= */
+
+@media (max-width: 900px) {
+
+    /* Header */
+
+    .header-container {
+        height: 82px;
+        padding: 0 22px;
+    }
+
+    .header-logo img {
+        width: 180px;
+    }
+
+    /* Hide Desktop Navigation */
+
+    .desktop-nav {
+        display: none;
+    }
+
+    /* Show Hamburger */
+
+    .menu-toggle {
+        display: flex;
+        margin-left: auto;
+    }
+
+    /* Mobile Dropdown */
+
+    .mobile-nav {
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+        right: 0;
+
+        display: flex;
+        flex-direction: column;
+
+        padding: 0 25px;
+
+        background: var(--white);
+
+        box-shadow: 0 15px 25px rgba(6, 51, 88, 0.08);
+
+        max-height: 0;
+        overflow: hidden;
+
+        visibility: hidden;
+        opacity: 0;
+
+        transition:
+            max-height 0.35s ease,
+            opacity 0.3s ease,
+            visibility 0.3s ease,
+            padding 0.3s ease;
+    }
+
+    /* Open Dropdown */
+
+    .mobile-nav.open {
+        max-height: 350px;
+        padding: 15px 25px 25px;
+
+        visibility: visible;
+        opacity: 1;
+    }
+
+    /* Mobile Links */
+
+    .mobile-link {
+        display: block;
+        padding: 16px 5px;
+
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 0.6px;
+        text-transform: uppercase;
+
+        color: var(--primary);
+
+        border-bottom: 1px solid var(--border);
+
+        transition:
+            color 0.3s ease,
+            padding-left 0.3s ease;
+    }
+
+    .mobile-link:last-child {
+        border-bottom: none;
+    }
+
+    .mobile-link:hover,
+    .mobile-link.active {
+        color: var(--accent-dark);
+        padding-left: 10px;
+    }
+
+}
+
+/* =========================================
+   TABLET FOOTER
+   769px - 900px
+========================================= */
+
+@media (min-width: 769px) and (max-width: 900px) {
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px;
+
+        padding: 45px 25px;
+    }
+
+    /* Logo Centered Above Columns */
+
+    .footer-brand {
+        grid-column: 1 / -1;
+        justify-content: center;
+    }
+
+    .footer-brand img {
+        width: 190px;
+    }
+
+    /* Information */
+
+    .footer-info {
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-info h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footer-address p,
+    .footer-contact a {
+        text-align: center;
+    }
+
+}
+
+/* =========================================
+   MOBILE
+   MAX WIDTH: 768px
+========================================= */
+
+@media (max-width: 768px) {
+
+    /* Footer Layout */
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+
+        padding: 50px 22px 40px;
+        text-align: center;
+    }
+
+    /* Center Logo */
+
+    .footer-brand {
+        justify-content: center;
+    }
+
+    .footer-brand img {
+        width: 200px;
+    }
+
+    /* Center Footer Information */
+
+    .footer-info {
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-info h3 {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    .footer-info h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footer-address p,
+    .footer-contact a {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .footer-contact {
+        gap: 8px;
+    }
+
+    .footer-contact h3 {
+        margin-bottom: 10px;
+    }
+
+}
+
+/* =========================================
+   SMALL MOBILE
+   MAX WIDTH: 480px
+========================================= */
+
+@media (max-width: 480px) {
+
+    /* Header */
+
+    .header-container {
+        height: 75px;
+        padding: 0 17px;
+    }
+
+    .header-logo img {
+        width: 155px;
+    }
+
+    /* Hamburger */
+
+    .menu-toggle {
+        width: 38px;
+        height: 38px;
+    }
+
+    /* Mobile Navigation */
+
+    .mobile-nav.open {
+        padding: 12px 20px 22px;
+    }
+
+    .mobile-link {
+        font-size: 13px;
+        padding: 15px 5px;
+    }
+
+    /* Footer */
+
+    .footer-container {
+        padding: 40px 17px 35px;
+        gap: 30px;
+    }
+
+    .footer-brand img {
+        width: 175px;
+    }
+
+    .footer-info h3 {
+        font-size: 15px;
+    }
+
+    .footer-address p,
+    .footer-contact a {
+        font-size: 13px;
+    }
+
+}
+
+/* =========================================
+   VERY SMALL MOBILE
+   MAX WIDTH: 360px
+========================================= */
+
+@media (max-width: 360px) {
+
+    /* Header */
+
+    .header-container {
+        padding: 0 14px;
+    }
+
+    .header-logo img {
+        width: 140px;
+    }
+
+    /* Footer */
+
+    .footer-container {
+        padding: 35px 14px;
+    }
+
+    .footer-brand img {
+        width: 160px;
+    }
+
+    .footer-address p,
+    .footer-contact a {
+        font-size: 12px;
+    }
+
+}
+
+/* =========================================
+   ACCESSIBILITY
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+   PHYSIOCARE CLINIC
+   CONTACT US - INTRO SECTION
+========================================= */
+
+.contact-intro {
+    width: 100%;
+    background: #f4f7f9;
+    color: var(--primary);
+    padding: 65px 0 75px;
+}
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.contact-intro-container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 35px;
+}
+
+/* =========================================
+   SECTION LABEL
+========================================= */
+
+.contact-intro-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 22px;
+
+    color: var(--accent-dark);
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+}
+
+/* Decorative Line */
+
+.contact-label-line {
+    display: inline-block;
+    flex-shrink: 0;
+
+    width: 25px;
+    height: 2px;
+
+    background: var(--accent);
+}
+
+/* =========================================
+   MAIN HEADING
+========================================= */
+
+.contact-intro-title {
+    margin: 0 0 48px;
+
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(30px, 3.5vw, 44px);
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: -0.7px;
+
+    color: var(--primary);
+}
+
+.contact-intro-title span {
+    white-space: nowrap;
+}
+
+/* =========================================
+   CONTACT DETAILS CONTAINER
+========================================= */
+
+.contact-intro-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 30px;
+}
+
+/* =========================================
+   INDIVIDUAL CONTACT BLOCK
+========================================= */
+
+.contact-detail-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    width: 100%;
+    max-width: 100%;
+}
+
+/* =========================================
+   CONTACT LABELS
+========================================= */
+
+.contact-detail-block h2 {
+    margin: 0 0 10px;
+
+    font-family: var(--font-main);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 1.5;
+
+    color: var(--accent-dark);
+}
+
+/* =========================================
+   CONTACT VALUES
+========================================= */
+
+.contact-detail-value {
+    display: inline-block;
+
+    max-width: 100%;
+    margin-bottom: 5px;
+
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.4;
+
+    color: var(--primary);
+    overflow-wrap: anywhere;
+
+    transition: color 0.3s ease;
+}
+
+.contact-detail-value:hover {
+    color: var(--accent-dark);
+}
+
+/* =========================================
+   EMAIL
+========================================= */
+
+.contact-email {
+    font-size: 19px;
+    overflow-wrap: anywhere;
+}
+
+/* =========================================
+   ADDRESS
+========================================= */
+
+.contact-address-link {
+    font-size: 20px;
+}
+
+/* =========================================
+   DESCRIPTION TEXT
+========================================= */
+
+.contact-detail-block p {
+    margin: 0;
+
+    font-family: var(--font-main);
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.8;
+
+    color: var(--muted);
+}
+
+/* =========================================
+   INLINE LINKS
+========================================= */
+
+.contact-detail-block p a {
+    color: var(--muted);
+    transition: color 0.3s ease;
+}
+
+.contact-detail-block p a:hover {
+    color: var(--accent-dark);
+}
+
+/* =========================================
+   LINK SEPARATOR
+========================================= */
+
+.contact-separator {
+    display: inline-block;
+    margin: 0 5px;
+    color: var(--muted);
+}
+
+/* =========================================
+   TABLET RESPONSIVE
+   MAX WIDTH: 1100px
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .contact-intro {
+        padding: 60px 0 70px;
+    }
+
+    .contact-intro-container {
+        padding: 0 25px;
+    }
+
+    .contact-intro-title {
+        font-size: clamp(30px, 3.5vw, 40px);
+        margin-bottom: 42px;
+    }
+
+    .contact-intro-details {
+        gap: 28px;
+    }
+
+    .contact-detail-value {
+        font-size: 19px;
+    }
+
+    .contact-email {
+        font-size: 18px;
+    }
+
+}
+
+/* =========================================
+   MOBILE RESPONSIVE
+   MAX WIDTH: 768px
+========================================= */
+
+@media (max-width: 768px) {
+
+    .contact-intro {
+        padding: 50px 0 60px;
+    }
+
+    .contact-intro-container {
+        padding: 0 22px;
+    }
+
+    .contact-intro-label {
+        margin-bottom: 18px;
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .contact-intro-title {
+        font-size: clamp(28px, 5vw, 36px);
+        line-height: 1.3;
+        letter-spacing: -0.5px;
+        margin-bottom: 38px;
+    }
+
+    .contact-intro-details {
+        gap: 26px;
+    }
+
+    .contact-detail-block h2 {
+        font-size: 10px;
+        letter-spacing: 1.7px;
+        margin-bottom: 9px;
+    }
+
+    .contact-detail-value {
+        font-size: 18px;
+    }
+
+    .contact-email {
+        font-size: 17px;
+    }
+
+    .contact-detail-block p {
+        font-size: 12px;
+        line-height: 1.8;
+    }
+
+}
+
+/* =========================================
+   SMALL MOBILE RESPONSIVE
+   MAX WIDTH: 480px
+========================================= */
+
+@media (max-width: 480px) {
+
+    .contact-intro {
+        padding: 42px 0 50px;
+    }
+
+    .contact-intro-container {
+        padding: 0 17px;
+    }
+
+    .contact-intro-label {
+        margin-bottom: 16px;
+        font-size: 10px;
+    }
+
+    .contact-label-line {
+        width: 20px;
+    }
+
+    .contact-intro-title {
+        font-size: 28px;
+        line-height: 1.3;
+        margin-bottom: 32px;
+    }
+
+    .contact-intro-title span {
+        white-space: normal;
+    }
+
+    .contact-intro-details {
+        gap: 24px;
+    }
+
+    .contact-detail-block h2 {
+        font-size: 10px;
+        margin-bottom: 8px;
+    }
+
+    .contact-detail-value,
+    .contact-address-link {
+        font-size: 17px;
+    }
+
+    .contact-email {
+        font-size: 16px;
+    }
+
+    .contact-detail-block p {
+        font-size: 12px;
+        line-height: 1.7;
+    }
+
+}
+
+/* =========================================
+   VERY SMALL MOBILE
+   MAX WIDTH: 360px
+========================================= */
+
+@media (max-width: 360px) {
+
+    .contact-intro-container {
+        padding: 0 14px;
+    }
+
+    .contact-intro-title {
+        font-size: 25px;
+    }
+
+    .contact-detail-value,
+    .contact-address-link {
+        font-size: 16px;
+    }
+
+    .contact-email {
+        font-size: 15px;
+    }
+
+    .contact-detail-block p {
+        font-size: 11px;
+    }
+
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .contact-detail-value,
+    .contact-detail-block p a {
+        transition: none;
+    }
+
+}
+
+
+
+
+/* =========================================
+   CONTACT PAGE - FORM SECTION
+========================================= */
+
+.contact-form-section {
+    width: 100%;
+    background: #ffffff;
+    padding: 85px 0 95px;
+}
+
+.contact-form-container {
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 0 35px;
+}
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.contact-form-heading {
+    max-width: 750px;
+    margin-bottom: 45px;
+}
+
+.contact-form-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 20px;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    color: var(--accent-dark);
+}
+
+.contact-form-line {
+    width: 25px;
+    height: 2px;
+    background: var(--accent);
+}
+
+.contact-form-heading h2 {
+    margin-bottom: 18px;
+
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(28px, 3vw, 38px);
+    font-weight: 400;
+    line-height: 1.3;
+
+    color: var(--primary);
+}
+
+.contact-form-heading p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.9;
+    color: var(--muted);
+}
+
+/* =========================================
+   FORM GRID
+========================================= */
+
+.physiocare-form {
+    width: 100%;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 25px;
+    row-gap: 28px;
+}
+
+/* =========================================
+   FORM GROUP
+========================================= */
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.form-full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    margin-bottom: 10px;
+
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.form-group label span {
+    color: var(--accent-dark);
+}
+
+/* =========================================
+   INPUTS, SELECT, TEXTAREA
+========================================= */
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    min-height: 52px;
+
+    padding: 14px 16px;
+
+    font-family: var(--font-main);
+    font-size: 13px;
+    font-weight: 400;
+
+    color: var(--text);
+    background: #f8fafb;
+
+    border: 1px solid #dfe6eb;
+    border-radius: 4px;
+
+    outline: none;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #929da6;
+}
+
+.form-group input:hover,
+.form-group select:hover,
+.form-group textarea:hover {
+    border-color: #b9c8d1;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--accent);
+
+    background: #ffffff;
+
+    box-shadow: 0 0 0 3px rgba(72, 169, 0, 0.09);
+}
+
+/* =========================================
+   PHONE NUMBER
+========================================= */
+
+.phone-input-wrapper {
+    display: flex;
+    align-items: stretch;
+
+    width: 100%;
+
+    background: #f8fafb;
+
+    border: 1px solid #dfe6eb;
+    border-radius: 4px;
+
+    overflow: hidden;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.phone-prefix {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 17px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    color: var(--primary);
+    background: #edf2f5;
+
+    border-right: 1px solid #dfe6eb;
+
+    white-space: nowrap;
+}
+
+.phone-input-wrapper input {
+    border: none;
+    border-radius: 0;
+    background: transparent;
+
+    min-width: 0;
+    flex: 1;
+}
+
+.phone-input-wrapper:focus-within {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(72, 169, 0, 0.09);
+}
+
+.phone-input-wrapper input:focus {
+    border: none;
+    box-shadow: none;
+    background: transparent;
+}
+
+.form-group small {
+    margin-top: 7px;
+
+    font-size: 11px;
+    color: var(--muted);
+}
+
+/* =========================================
+   SELECT
+========================================= */
+
+.form-group select {
+    cursor: pointer;
+    appearance: none;
+
+    padding-right: 40px;
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23063358' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 16px;
+}
+
+.form-group select:invalid {
+    color: #929da6;
+}
+
+/* =========================================
+   TEXTAREA
+========================================= */
+
+.form-group textarea {
+    min-height: 155px;
+    resize: vertical;
+    line-height: 1.8;
+}
+
+/* =========================================
+   SUBMIT BUTTON
+========================================= */
+
+.form-submit-area {
+    margin-top: 30px;
+}
+
+.contact-submit-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    min-height: 52px;
+    padding: 15px 27px;
+
+    font-family: var(--font-main);
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    color: #ffffff;
+    background: var(--primary);
+
+    border: 1px solid var(--primary);
+    border-radius: 3px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.contact-submit-btn svg {
+    width: 17px;
+    height: 17px;
+
+    transition: transform 0.3s ease;
+}
+
+.contact-submit-btn:hover {
+    background: var(--accent-dark);
+    border-color: var(--accent-dark);
+    transform: translateY(-2px);
+}
+
+.contact-submit-btn:hover svg {
+    transform: translateX(4px);
+}
+
+.contact-submit-btn:active {
+    transform: translateY(0);
+}
+
+/* =========================================
+   SUCCESS MESSAGE
+========================================= */
+
+.form-success-message {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+
+    margin-top: 28px;
+    padding: 20px 22px;
+
+    background: #f1f8ec;
+    border: 1px solid #cde5bf;
+    border-left: 4px solid var(--accent);
+
+    border-radius: 4px;
+}
+
+.form-success-message[hidden] {
+    display: none;
+}
+
+.success-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+
+    color: #ffffff;
+    background: var(--accent-dark);
+
+    border-radius: 50%;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.form-success-message strong {
+    display: block;
+    margin-bottom: 5px;
+
+    font-size: 14px;
+    color: var(--primary);
+}
+
+.form-success-message p {
+    font-size: 12px;
+    line-height: 1.7;
+    color: var(--muted);
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .contact-form-section {
+        padding: 70px 0 80px;
+    }
+
+    .contact-form-container {
+        padding: 0 25px;
+    }
+
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .contact-form-section {
+        padding: 60px 0 70px;
+    }
+
+    .contact-form-container {
+        padding: 0 22px;
+    }
+
+    .contact-form-heading {
+        margin-bottom: 35px;
+    }
+
+    .contact-form-heading h2 {
+        font-size: 30px;
+    }
+
+    .contact-form-heading p {
+        font-size: 13px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 23px;
+    }
+
+    .form-full-width {
+        grid-column: auto;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 14px;
+    }
+
+    .contact-submit-btn {
+        width: 100%;
+    }
+
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .contact-form-section {
+        padding: 45px 0 55px;
+    }
+
+    .contact-form-container {
+        padding: 0 17px;
+    }
+
+    .contact-form-heading h2 {
+        font-size: 27px;
+    }
+
+    .contact-form-heading p {
+        font-size: 12px;
+    }
+
+    .form-group label {
+        font-size: 12px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 13px 14px;
+        min-height: 50px;
+    }
+
+    .phone-prefix {
+        padding: 0 13px;
+    }
+
+    .contact-submit-btn {
+        min-height: 50px;
+    }
+
+    .form-success-message {
+        padding: 16px;
+    }
+
+}
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+
+    .contact-form-container {
+        padding: 0 14px;
+    }
+
+    .contact-form-heading h2 {
+        font-size: 25px;
+    }
+
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .contact-submit-btn,
+    .contact-submit-btn svg {
+        transition: none;
+    }
+
+}
+
+
+
+
+
+
+
+
+/* =========================================
+   PHYSIOCARE CLINIC
+   HOME PAGE - HERO SECTION
+========================================= */
+
+.home-hero {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 85% 20%,
+            rgba(72, 169, 0, 0.10),
+            transparent 38%),
+        linear-gradient(120deg,
+            #f4f8fa 0%,
+            #ffffff 48%,
+            #eaf2f5 100%);
+
+    padding: 90px 0 100px;
+}
+
+/* Subtle Decorative Background */
+
+.home-hero::before {
+    content: "";
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    right: -180px;
+    top: -200px;
+
+    border: 1px solid rgba(6, 51, 88, 0.06);
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+/* =========================================
+   HERO CONTAINER
+========================================= */
+
+.home-hero-container {
+    position: relative;
+    z-index: 1;
+
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 35px;
+
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+
+    gap: 65px;
+}
+
+/* =========================================
+   LEFT CONTENT
+========================================= */
+
+.home-hero-content {
+    max-width: 650px;
+}
+
+/* =========================================
+   SMALL LABEL
+========================================= */
+
+.home-hero-label {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    margin-bottom: 28px;
+
+    font-family: var(--font-main);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.1px;
+    line-height: 1.6;
+
+    color: var(--accent-dark);
+}
+
+.home-hero-line {
+    width: 30px;
+    height: 2px;
+    flex-shrink: 0;
+
+    background: var(--accent);
+}
+
+/* =========================================
+   MAIN TITLE
+========================================= */
+
+.home-hero-title {
+    margin: 0 0 28px;
+
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(39px, 4.2vw, 62px);
+    font-weight: 400;
+    line-height: 1.14;
+    letter-spacing: -1.8px;
+
+    color: var(--primary);
+}
+
+.home-hero-title em {
+    font-weight: 400;
+    color: var(--accent-dark);
+}
+
+/* =========================================
+   SUBTITLE
+========================================= */
+
+.home-hero-subtitle {
+    margin-bottom: 16px;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 1.7;
+
+    color: var(--primary);
+}
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.home-hero-description {
+    max-width: 580px;
+
+    margin-bottom: 30px;
+
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.9;
+
+    color: var(--muted);
+}
+
+/* =========================================
+   HERO BUTTONS
+========================================= */
+
+.home-hero-buttons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 15px;
+}
+
+.home-hero-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 52px;
+    padding: 15px 24px;
+
+    font-family: var(--font-main);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+
+    border: 1px solid transparent;
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+/* Primary Button */
+
+.home-hero-btn.primary-btn {
+    gap: 15px;
+
+    background: var(--primary);
+    color: var(--white);
+    border-color: var(--primary);
+}
+
+.home-hero-btn.primary-btn:hover {
+    background: var(--accent-dark);
+    border-color: var(--accent-dark);
+    transform: translateY(-2px);
+}
+
+.home-hero-btn.primary-btn svg {
+    width: 17px;
+    height: 17px;
+}
+
+/* Secondary Button */
+
+.home-hero-btn.secondary-btn {
+    background: transparent;
+    color: var(--primary);
+
+    border-color: rgba(6, 51, 88, 0.25);
+}
+
+.home-hero-btn.secondary-btn:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   RIGHT SIDE IMAGE
+========================================= */
+
+.home-hero-visual {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+}
+
+.home-hero-image-wrapper {
+    position: relative;
+
+    width: 100%;
+    height: 540px;
+
+    overflow: hidden;
+
+    border-radius: 4px;
+
+    box-shadow: 0 25px 55px rgba(6, 51, 88, 0.13);
+}
+
+.home-hero-image {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.7s ease;
+}
+
+.home-hero-image-wrapper:hover .home-hero-image {
+    transform: scale(1.045);
+}
+
+/* Decorative Green Corner */
+
+.home-hero-image-accent {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 85px;
+    height: 5px;
+
+    background: var(--accent);
+}
+
+/* =========================================
+   FLOATING LABEL
+========================================= */
+
+.home-hero-floating-label {
+    position: absolute;
+
+    bottom: -20px;
+    left: -25px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 17px 22px;
+
+    background: var(--primary);
+    color: var(--white);
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+
+    box-shadow: 0 12px 30px rgba(6, 51, 88, 0.15);
+}
+
+.floating-label-dot {
+    width: 8px;
+    height: 8px;
+
+    background: var(--accent);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* =========================================
+   LARGE TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .home-hero {
+        padding: 75px 0 85px;
+    }
+
+    .home-hero-container {
+        padding: 0 25px;
+        gap: 35px;
+    }
+
+    .home-hero-title {
+        font-size: clamp(38px, 4vw, 50px);
+    }
+
+    .home-hero-description {
+        font-size: 14px;
+    }
+
+    .home-hero-image-wrapper {
+        height: 480px;
+    }
+
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .home-hero {
+        padding: 65px 0 80px;
+    }
+
+    .home-hero-container {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .home-hero-content {
+        max-width: 720px;
+    }
+
+    .home-hero-title {
+        font-size: clamp(40px, 6vw, 56px);
+    }
+
+    .home-hero-description {
+        max-width: 650px;
+    }
+
+    .home-hero-visual {
+        max-width: 720px;
+    }
+
+    .home-hero-image-wrapper {
+        height: 440px;
+    }
+
+    .home-hero-floating-label {
+        left: 20px;
+    }
+
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .home-hero {
+        padding: 55px 0 70px;
+    }
+
+    .home-hero-container {
+        padding: 0 22px;
+        gap: 40px;
+    }
+
+    .home-hero-label {
+        margin-bottom: 22px;
+        font-size: 10px;
+        letter-spacing: 1.5px;
+    }
+
+    .home-hero-title {
+        font-size: clamp(36px, 7vw, 48px);
+        letter-spacing: -1px;
+        margin-bottom: 22px;
+    }
+
+    .home-hero-subtitle {
+        font-size: 10px;
+        letter-spacing: 1.5px;
+    }
+
+    .home-hero-description {
+        font-size: 14px;
+        line-height: 1.85;
+    }
+
+    .home-hero-image-wrapper {
+        height: 380px;
+    }
+
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .home-hero {
+        padding: 45px 0 65px;
+    }
+
+    .home-hero-container {
+        padding: 0 17px;
+        gap: 35px;
+    }
+
+    .home-hero-label {
+        font-size: 9px;
+        letter-spacing: 1.1px;
+        gap: 9px;
+    }
+
+    .home-hero-line {
+        width: 20px;
+    }
+
+    .home-hero-title {
+        font-size: clamp(32px, 8vw, 40px);
+        line-height: 1.2;
+    }
+
+    .home-hero-subtitle {
+        font-size: 9px;
+    }
+
+    .home-hero-description {
+        font-size: 13px;
+        line-height: 1.8;
+        margin-bottom: 25px;
+    }
+
+    .home-hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .home-hero-btn {
+        width: 100%;
+        min-height: 50px;
+        font-size: 11px;
+    }
+
+    .home-hero-image-wrapper {
+        height: 310px;
+    }
+
+    .home-hero-floating-label {
+        bottom: -15px;
+        left: 12px;
+
+        padding: 13px 15px;
+
+        font-size: 9px;
+        letter-spacing: 0.8px;
+    }
+
+}
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+
+    .home-hero-container {
+        padding: 0 14px;
+    }
+
+    .home-hero-title {
+        font-size: 30px;
+    }
+
+    .home-hero-image-wrapper {
+        height: 270px;
+    }
+
+    .home-hero-floating-label {
+        font-size: 8px;
+        padding: 12px;
+    }
+
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .home-hero-image,
+    .home-hero-btn {
+        transition: none;
+    }
+
+}
+
+
+/* =========================================
+   HOME PAGE - ANIMATED STATISTICS
+========================================= */
+
+.home-stats {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 50% 50%,
+            rgba(72, 169, 0, 0.08),
+            transparent 65%),
+        linear-gradient(120deg,
+            #032641 0%,
+            #063358 50%,
+            #032641 100%);
+
+    padding: 55px 0;
+}
+
+/* Subtle Decorative Glow */
+
+.home-stats::before {
+    content: "";
+
+    position: absolute;
+    top: -150px;
+    right: -100px;
+
+    width: 400px;
+    height: 400px;
+
+    background: radial-gradient(circle,
+            rgba(72, 169, 0, 0.08),
+            transparent 70%);
+
+    pointer-events: none;
+}
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.home-stats-container {
+    position: relative;
+    z-index: 1;
+
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 35px;
+
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 25px;
+}
+
+/* =========================================
+   STATISTIC ITEM
+========================================= */
+
+.home-stat-item {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    min-width: 0;
+    padding: 12px 25px;
+
+    transition: transform 0.35s ease;
+}
+
+/* Vertical Divider */
+
+.home-stat-item:not(:last-child)::after {
+    content: "";
+
+    position: absolute;
+    top: 15%;
+    right: 0;
+
+    width: 1px;
+    height: 70%;
+
+    background: rgba(255, 255, 255, 0.12);
+}
+
+/* Hover Effect */
+
+.home-stat-item:hover {
+    transform: translateY(-5px);
+}
+
+/* =========================================
+   NUMBERS
+========================================= */
+
+.home-stat-number {
+    display: flex;
+    align-items: baseline;
+
+    margin-bottom: 8px;
+
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(36px, 3.8vw, 52px);
+    font-weight: 400;
+    line-height: 1.1;
+
+    letter-spacing: -1px;
+    color: #ffffff;
+}
+
+.stat-counter {
+    display: inline-block;
+    font-variant-numeric: lining-nums tabular-nums;
+}
+
+/* Green Suffix */
+
+.stat-suffix {
+    margin-left: 2px;
+
+    font-family: var(--font-main);
+    font-size: 19px;
+    font-weight: 500;
+
+    color: #6cc331;
+}
+
+/* =========================================
+   LABELS
+========================================= */
+
+.home-stat-label {
+    font-family: var(--font-main);
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 1.3px;
+    line-height: 1.6;
+
+    color: #b3c2cc;
+}
+
+/* =========================================
+   ENTRANCE ANIMATION
+========================================= */
+
+.home-stat-item {
+    opacity: 0;
+    transform: translateY(25px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+/* Visible State */
+
+.home-stat-item.stat-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered Appearance */
+
+.home-stat-item:nth-child(1) {
+    transition-delay: 0.05s;
+}
+
+.home-stat-item:nth-child(2) {
+    transition-delay: 0.15s;
+}
+
+.home-stat-item:nth-child(3) {
+    transition-delay: 0.25s;
+}
+
+.home-stat-item:nth-child(4) {
+    transition-delay: 0.35s;
+}
+
+/* Hover After Animation */
+
+.home-stat-item.stat-visible:hover {
+    transform: translateY(-5px);
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .home-stats {
+        padding: 45px 0;
+    }
+
+    .home-stats-container {
+        padding: 0 25px;
+        gap: 15px;
+    }
+
+    .home-stat-item {
+        padding: 12px 15px;
+    }
+
+    .home-stat-number {
+        font-size: 40px;
+    }
+
+    .home-stat-label {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+}
+
+/* =========================================
+   SMALL TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .home-stats-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: 35px;
+    }
+
+    .home-stat-item {
+        padding: 10px 20px;
+    }
+
+    /* Remove Original Dividers */
+
+    .home-stat-item::after {
+        display: none;
+    }
+
+    /* Middle Divider */
+
+    .home-stat-item:nth-child(odd)::after {
+        content: "";
+        display: block;
+
+        position: absolute;
+        top: 15%;
+        right: 0;
+
+        width: 1px;
+        height: 70%;
+
+        background: rgba(255, 255, 255, 0.12);
+    }
+
+    .home-stat-number {
+        font-size: 43px;
+    }
+
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .home-stats {
+        padding: 40px 0;
+    }
+
+    .home-stats-container {
+        padding: 0 22px;
+        row-gap: 30px;
+        column-gap: 10px;
+    }
+
+    .home-stat-item {
+        padding: 12px 15px;
+    }
+
+    .home-stat-number {
+        font-size: 38px;
+    }
+
+    .stat-suffix {
+        font-size: 16px;
+    }
+
+    .home-stat-label {
+        font-size: 10px;
+        letter-spacing: 0.8px;
+    }
+
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .home-stats {
+        padding: 35px 0;
+    }
+
+    .home-stats-container {
+        padding: 0 17px;
+        row-gap: 25px;
+    }
+
+    .home-stat-item {
+        padding: 10px;
+    }
+
+    .home-stat-number {
+        font-size: 34px;
+    }
+
+    .stat-suffix {
+        font-size: 14px;
+    }
+
+    .home-stat-label {
+        font-size: 9px;
+        letter-spacing: 0.5px;
+    }
+
+}
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+
+    .home-stats-container {
+        padding: 0 14px;
+        column-gap: 5px;
+    }
+
+    .home-stat-item {
+        padding: 8px;
+    }
+
+    .home-stat-number {
+        font-size: 30px;
+    }
+
+    .home-stat-label {
+        font-size: 8px;
+    }
+
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .home-stat-item {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .home-stat-item.stat-visible:hover {
+        transform: none;
+    }
+
+}
+
+
+
+/* =========================================
+   PHYSIOCARE CLINIC
+   WHY CHOOSE US SECTION
+========================================= */
+
+.home-why {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    background: #f7f9fa;
+
+    padding: 90px 0 100px;
+}
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.home-why-container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 35px;
+}
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.home-why-heading {
+    max-width: 850px;
+    margin-bottom: 65px;
+}
+
+.home-why-label {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    margin-bottom: 25px;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+
+    color: var(--accent-dark);
+}
+
+.home-why-line {
+    display: block;
+    width: 28px;
+    height: 2px;
+
+    background: var(--accent);
+    flex-shrink: 0;
+}
+
+.home-why-heading h2 {
+    margin-bottom: 22px;
+
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(32px, 3.5vw, 46px);
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: -1px;
+
+    color: var(--primary);
+}
+
+.home-why-heading p {
+    max-width: 750px;
+
+    font-size: 15px;
+    line-height: 1.95;
+
+    color: var(--muted);
+}
+
+/* =========================================
+   FEATURES GRID
+========================================= */
+
+.home-why-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+
+    gap: 0;
+}
+
+/* =========================================
+   FEATURE CARDS
+========================================= */
+
+.home-why-card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    min-width: 0;
+    padding: 25px 22px 30px;
+
+    text-align: center;
+
+    border-right: 1px solid #dfe6e9;
+
+    /* Entrance animation */
+    opacity: 0;
+    transform: translateY(35px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.home-why-card:last-child {
+    border-right: none;
+}
+
+/* Visible State */
+
+.home-why-card.why-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered Entrance */
+
+.home-why-card:nth-child(1) {
+    transition-delay: 0.05s;
+}
+
+.home-why-card:nth-child(2) {
+    transition-delay: 0.15s;
+}
+
+.home-why-card:nth-child(3) {
+    transition-delay: 0.25s;
+}
+
+.home-why-card:nth-child(4) {
+    transition-delay: 0.35s;
+}
+
+.home-why-card:nth-child(5) {
+    transition-delay: 0.45s;
+}
+
+/* =========================================
+   ICONS - NO BACKGROUND
+========================================= */
+
+.home-why-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 65px;
+    height: 65px;
+
+    margin-bottom: 25px;
+
+    background: transparent;
+    border: none;
+    border-radius: 0;
+
+    color: var(--accent-dark);
+
+    animation: whyIconFloat 4s ease-in-out infinite;
+}
+
+/* Lucide SVG */
+
+.home-why-icon svg {
+    width: 39px;
+    height: 39px;
+
+    stroke: currentColor;
+    stroke-width: 1.5;
+}
+
+/* =========================================
+   AUTOMATIC FLOATING ANIMATION
+========================================= */
+
+@keyframes whyIconFloat {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-9px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+/* Different Timing for Each Icon */
+
+.home-why-card:nth-child(1) .home-why-icon {
+    animation-duration: 3.5s;
+    animation-delay: 0s;
+}
+
+.home-why-card:nth-child(2) .home-why-icon {
+    animation-duration: 4.2s;
+    animation-delay: 0.4s;
+}
+
+.home-why-card:nth-child(3) .home-why-icon {
+    animation-duration: 3.8s;
+    animation-delay: 0.8s;
+}
+
+.home-why-card:nth-child(4) .home-why-icon {
+    animation-duration: 4.5s;
+    animation-delay: 0.2s;
+}
+
+.home-why-card:nth-child(5) .home-why-icon {
+    animation-duration: 4s;
+    animation-delay: 0.6s;
+}
+
+/* =========================================
+   CARD TITLES
+========================================= */
+
+.home-why-card h3 {
+    margin-bottom: 16px;
+
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.4;
+
+    color: var(--primary);
+}
+
+/* =========================================
+   CARD DESCRIPTIONS
+========================================= */
+
+.home-why-card p {
+    font-size: 13px;
+    line-height: 1.85;
+
+    color: var(--muted);
+}
+
+/* =========================================
+   LARGE TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .home-why {
+        padding: 75px 0 85px;
+    }
+
+    .home-why-container {
+        padding: 0 25px;
+    }
+
+    .home-why-heading {
+        margin-bottom: 50px;
+    }
+
+    .home-why-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        row-gap: 30px;
+    }
+
+    .home-why-card {
+        padding: 25px 20px;
+    }
+
+    .home-why-card:nth-child(3) {
+        border-right: none;
+    }
+
+    .home-why-card:nth-child(n+4) {
+        border-top: 1px solid #dfe6e9;
+        padding-top: 35px;
+    }
+
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .home-why-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: 0;
+    }
+
+    .home-why-card {
+        border-right: none;
+        border-top: none;
+
+        padding: 30px 25px;
+    }
+
+    .home-why-card:nth-child(odd) {
+        border-right: 1px solid #dfe6e9;
+    }
+
+    .home-why-card:nth-child(n+3) {
+        border-top: 1px solid #dfe6e9;
+    }
+
+    .home-why-heading h2 {
+        font-size: 38px;
+    }
+
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .home-why {
+        padding: 65px 0 75px;
+    }
+
+    .home-why-container {
+        padding: 0 22px;
+    }
+
+    .home-why-heading {
+        margin-bottom: 40px;
+    }
+
+    .home-why-heading h2 {
+        font-size: 34px;
+    }
+
+    .home-why-heading p {
+        font-size: 14px;
+        line-height: 1.85;
+    }
+
+    .home-why-card {
+        padding: 25px 18px;
+    }
+
+    .home-why-icon {
+        width: 58px;
+        height: 58px;
+        margin-bottom: 20px;
+    }
+
+    .home-why-icon svg {
+        width: 34px;
+        height: 34px;
+    }
+
+    .home-why-card h3 {
+        font-size: 17px;
+    }
+
+    .home-why-card p {
+        font-size: 12px;
+    }
+
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .home-why {
+        padding: 50px 0 60px;
+    }
+
+    .home-why-container {
+        padding: 0 17px;
+    }
+
+    .home-why-label {
+        font-size: 10px;
+        letter-spacing: 1.8px;
+    }
+
+    .home-why-heading h2 {
+        font-size: 29px;
+    }
+
+    .home-why-heading p {
+        font-size: 13px;
+    }
+
+    .home-why-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .home-why-card {
+        border-right: none !important;
+        border-top: 1px solid #dfe6e9;
+
+        padding: 30px 15px;
+    }
+
+    .home-why-card:first-child {
+        border-top: none;
+    }
+
+    .home-why-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .home-why-card h3 {
+        font-size: 18px;
+    }
+
+    .home-why-card p {
+        max-width: 340px;
+        font-size: 13px;
+    }
+
+}
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+
+    .home-why-container {
+        padding: 0 14px;
+    }
+
+    .home-why-heading h2 {
+        font-size: 27px;
+    }
+
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .home-why-card {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .home-why-icon {
+        animation: none;
+    }
+
+}
+
+
+
+
+/* =========================================
+   PHYSIOCARE CLINIC
+   HOME PAGE - PATIENT REVIEWS
+========================================= */
+
+.home-reviews {
+    width: 100%;
+    background: #ffffff;
+    padding: 85px 0 95px;
+    overflow: hidden;
+}
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.home-reviews-container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 35px;
+}
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.home-reviews-heading {
+    margin-bottom: 50px;
+}
+
+/* Small Label */
+
+.home-reviews-label {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    margin-bottom: 22px;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+
+    color: var(--accent-dark);
+}
+
+/* Decorative Line */
+
+.home-reviews-line {
+    display: block;
+    width: 28px;
+    height: 2px;
+
+    background: var(--accent);
+    flex-shrink: 0;
+}
+
+/* Main Heading */
+
+.home-reviews-heading h2 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(32px, 3.5vw, 46px);
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: -1px;
+
+    color: var(--primary);
+}
+
+/* =========================================
+   REVIEWS GRID
+========================================= */
+
+.home-reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 22px;
+}
+
+/* =========================================
+   REVIEW CARDS
+========================================= */
+
+.home-review-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    min-width: 0;
+    padding: 30px 28px;
+
+    background: #f5f4f1;
+    border: 1px solid transparent;
+    border-radius: 12px;
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+}
+
+/* Hover Effect */
+
+.home-review-card:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(72, 169, 0, 0.15);
+
+    box-shadow: 0 15px 35px rgba(6, 51, 88, 0.07);
+}
+
+/* =========================================
+   FIVE-STAR RATING
+========================================= */
+
+.home-review-stars {
+    margin-bottom: 22px;
+
+    font-size: 15px;
+    letter-spacing: 2px;
+    line-height: 1;
+
+    color: var(--accent-dark);
+}
+
+/* =========================================
+   REVIEW TEXT
+========================================= */
+
+.home-review-card blockquote {
+    flex: 1;
+
+    margin: 0 0 26px;
+
+    font-family: var(--font-main);
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.95;
+
+    color: var(--text);
+}
+
+/* =========================================
+   REVIEW AUTHOR
+========================================= */
+
+.home-review-author {
+    margin-top: auto;
+
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.6;
+
+    color: var(--primary);
+}
+
+/* =========================================
+   AUTOMATIC ENTRANCE ANIMATION
+========================================= */
+
+@keyframes reviewCardReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(28px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+/* Animation Activated by JavaScript */
+
+.home-reviews.animate-reviews .home-review-card {
+    animation: reviewCardReveal 0.75s ease both;
+}
+
+/* Staggered Animation */
+
+.home-reviews.animate-reviews .home-review-card:nth-child(1) {
+    animation-delay: 0.05s;
+}
+
+.home-reviews.animate-reviews .home-review-card:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.home-reviews.animate-reviews .home-review-card:nth-child(3) {
+    animation-delay: 0.25s;
+}
+
+.home-reviews.animate-reviews .home-review-card:nth-child(4) {
+    animation-delay: 0.35s;
+}
+
+.home-reviews.animate-reviews .home-review-card:nth-child(5) {
+    animation-delay: 0.45s;
+}
+
+.home-reviews.animate-reviews .home-review-card:nth-child(6) {
+    animation-delay: 0.55s;
+}
+
+/* =========================================
+   LARGE TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .home-reviews {
+        padding: 75px 0 85px;
+    }
+
+    .home-reviews-container {
+        padding: 0 25px;
+    }
+
+    .home-reviews-grid {
+        gap: 18px;
+    }
+
+    .home-review-card {
+        padding: 25px 22px;
+    }
+
+    .home-review-card blockquote {
+        font-size: 13px;
+    }
+
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .home-reviews-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .home-reviews-heading {
+        margin-bottom: 40px;
+    }
+
+    .home-reviews-heading h2 {
+        font-size: 38px;
+    }
+
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .home-reviews {
+        padding: 60px 0 70px;
+    }
+
+    .home-reviews-container {
+        padding: 0 22px;
+    }
+
+    .home-reviews-heading {
+        margin-bottom: 35px;
+    }
+
+    .home-reviews-heading h2 {
+        font-size: 34px;
+    }
+
+    .home-review-card {
+        padding: 24px 20px;
+    }
+
+    .home-review-card blockquote {
+        font-size: 13px;
+        line-height: 1.85;
+    }
+
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .home-reviews-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .home-review-card {
+        padding: 25px 22px;
+    }
+
+}
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .home-reviews {
+        padding: 50px 0 60px;
+    }
+
+    .home-reviews-container {
+        padding: 0 17px;
+    }
+
+    .home-reviews-label {
+        font-size: 10px;
+        letter-spacing: 1.8px;
+    }
+
+    .home-reviews-heading {
+        margin-bottom: 30px;
+    }
+
+    .home-reviews-heading h2 {
+        font-size: 29px;
+    }
+
+    .home-review-card {
+        padding: 24px 20px;
+        border-radius: 9px;
+    }
+
+    .home-review-stars {
+        margin-bottom: 17px;
+    }
+
+    .home-review-card blockquote {
+        font-size: 13px;
+        margin-bottom: 20px;
+    }
+
+    .home-review-author {
+        font-size: 12px;
+    }
+
+}
+
+/* =========================================
+   VERY SMALL SCREENS
+========================================= */
+
+@media (max-width: 360px) {
+
+    .home-reviews-container {
+        padding: 0 14px;
+    }
+
+    .home-reviews-heading h2 {
+        font-size: 27px;
+    }
+
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .home-review-card {
+        transition: none;
+    }
+
+    .home-reviews.animate-reviews .home-review-card {
+        animation: none;
+    }
+
+}
+
+
+
+/* =========================================
+   PHYSIOCARE CLINIC
+   ABOUT US - OUR MISSION
+========================================= */
+
+.about-mission {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 90% 15%,
+            rgba(72, 169, 0, 0.06),
+            transparent 40%),
+        linear-gradient(120deg,
+            #ffffff 0%,
+            #f7fafb 100%);
+
+    padding: 100px 0 110px;
+}
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.about-mission-container {
+    position: relative;
+
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 35px;
+
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+
+    gap: 75px;
+}
+
+/* =========================================
+   LEFT CONTENT
+========================================= */
+
+.about-mission-content {
+    max-width: 650px;
+    min-width: 0;
+}
+
+/* =========================================
+   SMALL SECTION LABEL
+========================================= */
+
+.about-mission-label {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    margin-bottom: 25px;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.3px;
+    line-height: 1.6;
+
+    color: var(--accent-dark);
+}
+
+.about-mission-line {
+    display: block;
+
+    width: 30px;
+    height: 2px;
+
+    background: var(--accent);
+    flex-shrink: 0;
+}
+
+/* =========================================
+   MAIN HEADING
+========================================= */
+
+.about-mission-title {
+    margin-bottom: 28px;
+
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(42px, 4.5vw, 65px);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+
+    color: var(--primary);
+}
+
+.about-mission-title em {
+    font-weight: 400;
+    color: var(--accent-dark);
+}
+
+/* =========================================
+   INTRO STATEMENT
+========================================= */
+
+.about-mission-intro {
+    max-width: 570px;
+
+    margin-bottom: 25px;
+
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(20px, 2vw, 26px);
+    font-weight: 400;
+    line-height: 1.55;
+
+    color: var(--primary);
+}
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.about-mission-description {
+    margin-bottom: 20px;
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.95;
+
+    color: var(--muted);
+}
+
+/* =========================================
+   MISSION HIGHLIGHT
+========================================= */
+
+.about-mission-highlight {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    margin-top: 35px;
+    padding: 10px 0;
+}
+
+.about-mission-highlight-line {
+    display: block;
+
+    width: 3px;
+    min-height: 55px;
+
+    align-self: stretch;
+
+    background: var(--accent);
+    flex-shrink: 0;
+}
+
+.about-mission-highlight p {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 19px;
+    font-style: italic;
+    line-height: 1.6;
+
+    color: var(--primary);
+}
+
+/* =========================================
+   RIGHT SIDE IMAGE
+========================================= */
+
+.about-mission-visual {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+}
+
+.about-mission-image-wrapper {
+    position: relative;
+
+    width: 100%;
+    height: 590px;
+
+    overflow: hidden;
+    border-radius: 5px;
+
+    box-shadow: 0 25px 55px rgba(6, 51, 88, 0.12);
+}
+
+.about-mission-image {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.8s ease;
+}
+
+.about-mission-image-wrapper:hover .about-mission-image {
+    transform: scale(1.04);
+}
+
+/* Green Accent Line */
+
+.about-mission-image-wrapper::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 95px;
+    height: 5px;
+
+    background: var(--accent);
+    z-index: 2;
+}
+
+/* =========================================
+   IMAGE CAPTION
+========================================= */
+
+.about-mission-image-caption {
+    position: absolute;
+    bottom: -20px;
+    left: -25px;
+
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    padding: 18px 23px;
+
+    background: var(--primary);
+    color: #ffffff;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+
+    box-shadow: 0 12px 30px rgba(6, 51, 88, 0.15);
+}
+
+.about-mission-caption-dot {
+    width: 8px;
+    height: 8px;
+
+    background: var(--accent);
+    border-radius: 50%;
+
+    flex-shrink: 0;
+}
+
+/* =========================================
+   AUTOMATIC ENTRANCE ANIMATIONS
+========================================= */
+
+@keyframes missionFadeLeft {
+
+    from {
+        opacity: 0;
+        transform: translateX(-35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+@keyframes missionFadeRight {
+
+    from {
+        opacity: 0;
+        transform: translateX(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+.about-mission-content {
+    animation: missionFadeLeft 0.9s ease both;
+}
+
+.about-mission-visual {
+    animation: missionFadeRight 1s ease 0.15s both;
+}
+
+/* =========================================
+   LARGE TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .about-mission {
+        padding: 80px 0 95px;
+    }
+
+    .about-mission-container {
+        padding: 0 25px;
+        gap: 45px;
+    }
+
+    .about-mission-title {
+        font-size: 52px;
+    }
+
+    .about-mission-image-wrapper {
+        height: 530px;
+    }
+
+    .about-mission-description {
+        font-size: 13px;
+    }
+
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .about-mission {
+        padding: 70px 0 85px;
+    }
+
+    .about-mission-container {
+        grid-template-columns: 1fr;
+        gap: 55px;
+    }
+
+    .about-mission-content {
+        max-width: 750px;
+    }
+
+    .about-mission-title {
+        font-size: 54px;
+    }
+
+    .about-mission-description {
+        font-size: 14px;
+    }
+
+    .about-mission-visual {
+        max-width: 750px;
+    }
+
+    .about-mission-image-wrapper {
+        height: 480px;
+    }
+
+    .about-mission-image-caption {
+        left: 20px;
+    }
+
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .about-mission {
+        padding: 60px 0 75px;
+    }
+
+    .about-mission-container {
+        padding: 0 22px;
+        gap: 45px;
+    }
+
+    .about-mission-label {
+        font-size: 10px;
+        letter-spacing: 1.7px;
+    }
+
+    .about-mission-title {
+        font-size: 45px;
+        margin-bottom: 22px;
+    }
+
+    .about-mission-intro {
+        font-size: 22px;
+    }
+
+    .about-mission-description {
+        font-size: 14px;
+        line-height: 1.85;
+    }
+
+    .about-mission-highlight p {
+        font-size: 18px;
+    }
+
+    .about-mission-image-wrapper {
+        height: 420px;
+    }
+
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .about-mission {
+        padding: 50px 0 65px;
+    }
+
+    .about-mission-container {
+        padding: 0 17px;
+        gap: 40px;
+    }
+
+    .about-mission-label {
+        font-size: 9px;
+        letter-spacing: 1.3px;
+        gap: 9px;
+    }
+
+    .about-mission-line {
+        width: 22px;
+    }
+
+    .about-mission-title {
+        font-size: 39px;
+    }
+
+    .about-mission-intro {
+        font-size: 20px;
+    }
+
+    .about-mission-description {
+        font-size: 13px;
+        line-height: 1.85;
+    }
+
+    .about-mission-highlight {
+        margin-top: 25px;
+        gap: 13px;
+    }
+
+    .about-mission-highlight p {
+        font-size: 16px;
+    }
+
+    .about-mission-image-wrapper {
+        height: 340px;
+    }
+
+    .about-mission-image-caption {
+        left: 12px;
+        bottom: -15px;
+
+        padding: 14px 16px;
+
+        font-size: 9px;
+        letter-spacing: 0.8px;
+    }
+
+}
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+
+    .about-mission-container {
+        padding: 0 14px;
+    }
+
+    .about-mission-title {
+        font-size: 35px;
+    }
+
+    .about-mission-image-wrapper {
+        height: 290px;
+    }
+
+    .about-mission-image-caption {
+        font-size: 8px;
+        padding: 12px;
+    }
+
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .about-mission-content,
+    .about-mission-visual {
+        animation: none;
+    }
+
+    .about-mission-image {
+        transition: none;
+    }
+
+}
+
+
+
+
+/* =========================================
+   PHYSIOCARE CLINIC
+   ABOUT US - OUR VISION
+========================================= */
+
+.about-vision {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 10% 85%,
+            rgba(72, 169, 0, 0.06),
+            transparent 40%),
+        linear-gradient(120deg,
+            #f0f5f7 0%,
+            #f7fafb 55%,
+            #ffffff 100%);
+
+    padding: 100px 0 110px;
+}
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.about-vision-container {
+    position: relative;
+
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 35px;
+
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    align-items: center;
+
+    gap: 75px;
+}
+
+/* =========================================
+   LEFT SIDE - IMAGE
+========================================= */
+
+.about-vision-visual {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+}
+
+.about-vision-image-wrapper {
+    position: relative;
+
+    width: 100%;
+    height: 590px;
+
+    overflow: hidden;
+    border-radius: 5px;
+
+    box-shadow: 0 25px 55px rgba(6, 51, 88, 0.12);
+}
+
+.about-vision-image {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.8s ease;
+}
+
+/* Image Zoom Effect */
+
+.about-vision-image-wrapper:hover .about-vision-image {
+    transform: scale(1.04);
+}
+
+/* Green Accent Line */
+
+.about-vision-image-wrapper::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 95px;
+    height: 5px;
+
+    background: var(--accent);
+    z-index: 2;
+}
+
+/* =========================================
+   IMAGE CAPTION
+========================================= */
+
+.about-vision-image-caption {
+    position: absolute;
+
+    bottom: -20px;
+    right: -25px;
+
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    padding: 18px 23px;
+
+    background: var(--primary);
+    color: #ffffff;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+
+    box-shadow: 0 12px 30px rgba(6, 51, 88, 0.15);
+}
+
+.about-vision-caption-dot {
+    width: 8px;
+    height: 8px;
+
+    background: var(--accent);
+    border-radius: 50%;
+
+    flex-shrink: 0;
+}
+
+/* =========================================
+   RIGHT SIDE - CONTENT
+========================================= */
+
+.about-vision-content {
+    max-width: 650px;
+    min-width: 0;
+}
+
+/* =========================================
+   SMALL SECTION LABEL
+========================================= */
+
+.about-vision-label {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    margin-bottom: 25px;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.3px;
+    line-height: 1.6;
+    text-transform: uppercase;
+
+    color: var(--accent-dark);
+}
+
+.about-vision-line {
+    display: block;
+
+    width: 30px;
+    height: 2px;
+
+    background: var(--accent);
+    flex-shrink: 0;
+}
+
+/* =========================================
+   MAIN HEADING
+========================================= */
+
+.about-vision-title {
+    margin-bottom: 28px;
+
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(42px, 4.5vw, 65px);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+
+    color: var(--primary);
+}
+
+.about-vision-title em {
+    font-weight: 400;
+    color: var(--accent-dark);
+}
+
+/* =========================================
+   INTRO STATEMENT
+========================================= */
+
+.about-vision-intro {
+    max-width: 570px;
+    margin-bottom: 25px;
+
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(20px, 2vw, 26px);
+    font-weight: 400;
+    line-height: 1.55;
+
+    color: var(--primary);
+}
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.about-vision-description {
+    margin-bottom: 20px;
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.95;
+
+    color: var(--muted);
+}
+
+/* =========================================
+   VISION HIGHLIGHT
+========================================= */
+
+.about-vision-highlight {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    margin-top: 35px;
+    padding: 10px 0;
+}
+
+.about-vision-highlight-line {
+    display: block;
+
+    width: 3px;
+    min-height: 55px;
+
+    align-self: stretch;
+
+    background: var(--accent);
+    flex-shrink: 0;
+}
+
+.about-vision-highlight p {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 19px;
+    font-style: italic;
+    line-height: 1.6;
+
+    color: var(--primary);
+}
+
+/* =========================================
+   AUTOMATIC ENTRANCE ANIMATIONS
+========================================= */
+
+@keyframes visionFadeLeft {
+
+    from {
+        opacity: 0;
+        transform: translateX(-35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+@keyframes visionFadeRight {
+
+    from {
+        opacity: 0;
+        transform: translateX(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+/* Activated when section enters viewport */
+
+.about-vision-visual.vision-visible {
+    animation: visionFadeLeft 0.9s ease both;
+}
+
+.about-vision-content.vision-visible {
+    animation: visionFadeRight 1s ease 0.15s both;
+}
+
+/* =========================================
+   LARGE TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .about-vision {
+        padding: 80px 0 95px;
+    }
+
+    .about-vision-container {
+        padding: 0 25px;
+        gap: 45px;
+    }
+
+    .about-vision-title {
+        font-size: 52px;
+    }
+
+    .about-vision-image-wrapper {
+        height: 530px;
+    }
+
+    .about-vision-description {
+        font-size: 13px;
+    }
+
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .about-vision {
+        padding: 70px 0 85px;
+    }
+
+    .about-vision-container {
+        grid-template-columns: 1fr;
+        gap: 55px;
+    }
+
+    /* Content first, image second on tablet */
+
+    .about-vision-content {
+        order: 1;
+        max-width: 750px;
+    }
+
+    .about-vision-visual {
+        order: 2;
+        max-width: 750px;
+    }
+
+    .about-vision-title {
+        font-size: 54px;
+    }
+
+    .about-vision-description {
+        font-size: 14px;
+    }
+
+    .about-vision-image-wrapper {
+        height: 480px;
+    }
+
+    .about-vision-image-caption {
+        right: 20px;
+    }
+
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .about-vision {
+        padding: 60px 0 75px;
+    }
+
+    .about-vision-container {
+        padding: 0 22px;
+        gap: 45px;
+    }
+
+    .about-vision-label {
+        font-size: 10px;
+        letter-spacing: 1.7px;
+    }
+
+    .about-vision-title {
+        font-size: 45px;
+        margin-bottom: 22px;
+    }
+
+    .about-vision-intro {
+        font-size: 22px;
+    }
+
+    .about-vision-description {
+        font-size: 14px;
+        line-height: 1.85;
+    }
+
+    .about-vision-highlight p {
+        font-size: 18px;
+    }
+
+    .about-vision-image-wrapper {
+        height: 420px;
+    }
+
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .about-vision {
+        padding: 50px 0 65px;
+    }
+
+    .about-vision-container {
+        padding: 0 17px;
+        gap: 40px;
+    }
+
+    .about-vision-label {
+        font-size: 9px;
+        letter-spacing: 1.3px;
+        gap: 9px;
+    }
+
+    .about-vision-line {
+        width: 22px;
+    }
+
+    .about-vision-title {
+        font-size: 39px;
+    }
+
+    .about-vision-intro {
+        font-size: 20px;
+    }
+
+    .about-vision-description {
+        font-size: 13px;
+        line-height: 1.85;
+    }
+
+    .about-vision-highlight {
+        margin-top: 25px;
+        gap: 13px;
+    }
+
+    .about-vision-highlight p {
+        font-size: 16px;
+    }
+
+    .about-vision-image-wrapper {
+        height: 340px;
+    }
+
+    .about-vision-image-caption {
+        right: 12px;
+        bottom: -15px;
+
+        padding: 14px 16px;
+
+        font-size: 9px;
+        letter-spacing: 0.8px;
+    }
+
+}
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+
+    .about-vision-container {
+        padding: 0 14px;
+    }
+
+    .about-vision-title {
+        font-size: 35px;
+    }
+
+    .about-vision-image-wrapper {
+        height: 290px;
+    }
+
+    .about-vision-image-caption {
+        font-size: 8px;
+        padding: 12px;
+    }
+
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .about-vision-visual.vision-visible,
+    .about-vision-content.vision-visible {
+        animation: none;
+    }
+
+    .about-vision-image {
+        transition: none;
+    }
+
+}
+
+
+
+
+/* =========================================
+   PHYSIOCARE CLINIC
+   ABOUT US - WHAT WE TREAT
+========================================= */
+
+.about-treat {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    background: linear-gradient(120deg,
+            #063358 0%,
+            #0a4267 55%,
+            #063358 100%);
+
+    padding: 85px 0 95px;
+}
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.about-treat-container {
+    position: relative;
+    z-index: 1;
+
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 35px;
+}
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.about-treat-heading {
+    max-width: 780px;
+    margin-bottom: 48px;
+}
+
+/* Small Label */
+
+.about-treat-label {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    margin-bottom: 22px;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.3px;
+
+    color: #8ed35d;
+}
+
+/* Decorative Line */
+
+.about-treat-line {
+    display: block;
+
+    width: 28px;
+    height: 2px;
+
+    background: var(--accent);
+    flex-shrink: 0;
+}
+
+/* Heading */
+
+.about-treat-heading h2 {
+    margin-bottom: 20px;
+
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(32px, 3.5vw, 46px);
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: -1px;
+
+    color: #ffffff;
+}
+
+.about-treat-heading h2 em {
+    font-weight: 400;
+    color: #8ed35d;
+}
+
+/* Description */
+
+.about-treat-heading p {
+    max-width: 690px;
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.9;
+
+    color: #c0d1dc;
+}
+
+/* =========================================
+   TREATMENT TAGS CONTAINER
+========================================= */
+
+.about-treat-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    gap: 12px;
+}
+
+/* =========================================
+   INDIVIDUAL TREATMENT TAG
+========================================= */
+
+.about-treat-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 44px;
+    padding: 12px 18px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.20);
+    border-radius: 2px;
+
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.5;
+
+    color: #ffffff;
+
+    text-align: center;
+
+    opacity: 0;
+    transform: translateY(18px);
+
+    transition:
+        opacity 0.65s ease,
+        transform 0.65s ease,
+        background 0.3s ease,
+        border-color 0.3s ease;
+}
+
+/* =========================================
+   VISIBLE STATE
+========================================= */
+
+.about-treat.is-visible .about-treat-tag {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered Entrance */
+
+.about-treat-tag:nth-child(6n + 1) {
+    transition-delay: 0.05s;
+}
+
+.about-treat-tag:nth-child(6n + 2) {
+    transition-delay: 0.12s;
+}
+
+.about-treat-tag:nth-child(6n + 3) {
+    transition-delay: 0.19s;
+}
+
+.about-treat-tag:nth-child(6n + 4) {
+    transition-delay: 0.26s;
+}
+
+.about-treat-tag:nth-child(6n + 5) {
+    transition-delay: 0.33s;
+}
+
+.about-treat-tag:nth-child(6n + 6) {
+    transition-delay: 0.40s;
+}
+
+/* =========================================
+   SUBTLE HOVER
+========================================= */
+
+.about-treat-tag:hover {
+    background: rgba(72, 169, 0, 0.20);
+    border-color: rgba(142, 211, 93, 0.65);
+}
+
+/* =========================================
+   DECORATIVE BACKGROUND GLOW
+========================================= */
+
+.about-treat::before {
+    content: "";
+
+    position: absolute;
+    top: -200px;
+    right: -150px;
+
+    width: 450px;
+    height: 450px;
+
+    background: radial-gradient(circle,
+            rgba(72, 169, 0, 0.10),
+            transparent 70%);
+
+    pointer-events: none;
+}
+
+/* =========================================
+   LARGE TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .about-treat {
+        padding: 75px 0 85px;
+    }
+
+    .about-treat-container {
+        padding: 0 25px;
+    }
+
+    .about-treat-heading {
+        margin-bottom: 42px;
+    }
+
+    .about-treat-tag {
+        font-size: 12px;
+        padding: 11px 16px;
+    }
+
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .about-treat-heading h2 {
+        font-size: 38px;
+    }
+
+    .about-treat-list {
+        gap: 10px;
+    }
+
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .about-treat {
+        padding: 65px 0 75px;
+    }
+
+    .about-treat-container {
+        padding: 0 22px;
+    }
+
+    .about-treat-heading {
+        margin-bottom: 35px;
+    }
+
+    .about-treat-heading h2 {
+        font-size: 34px;
+    }
+
+    .about-treat-heading p {
+        font-size: 13px;
+        line-height: 1.85;
+    }
+
+    .about-treat-tag {
+        min-height: 42px;
+        padding: 10px 14px;
+        font-size: 12px;
+    }
+
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .about-treat {
+        padding: 55px 0 65px;
+    }
+
+    .about-treat-container {
+        padding: 0 17px;
+    }
+
+    .about-treat-label {
+        font-size: 10px;
+        letter-spacing: 1.5px;
+    }
+
+    .about-treat-heading h2 {
+        font-size: 29px;
+    }
+
+    .about-treat-heading p {
+        font-size: 12px;
+    }
+
+    .about-treat-list {
+        gap: 9px;
+    }
+
+    .about-treat-tag {
+        min-height: 39px;
+        padding: 9px 12px;
+        font-size: 11px;
+    }
+
+}
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+
+    .about-treat-container {
+        padding: 0 14px;
+    }
+
+    .about-treat-tag {
+        font-size: 10px;
+        padding: 8px 10px;
+    }
+
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .about-treat-tag {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+}
+
+
+/* =========================================
+   PHYSIOCARE CLINIC
+   ABOUT US - FAQ SECTION
+========================================= */
+
+.about-faq {
+    width: 100%;
+    background: #f5f3ef;
+    padding: 90px 0 100px;
+}
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.about-faq-container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 35px;
+}
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.about-faq-heading {
+    margin-bottom: 38px;
+}
+
+.about-faq-label {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    margin-bottom: 23px;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.3px;
+    text-transform: uppercase;
+
+    color: var(--accent-dark);
+}
+
+.about-faq-line {
+    display: block;
+    width: 28px;
+    height: 2px;
+    background: var(--accent);
+    flex-shrink: 0;
+}
+
+/* Main Title */
+
+.about-faq-heading h2 {
+    margin-bottom: 18px;
+
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(32px, 3.5vw, 46px);
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: -1px;
+
+    color: var(--primary);
+}
+
+/* Description */
+
+.about-faq-heading p {
+    max-width: 650px;
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.9;
+
+    color: var(--muted);
+}
+
+/* =========================================
+   FAQ GRID
+========================================= */
+
+.about-faq-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 20px 24px;
+    align-items: start;
+}
+
+/* =========================================
+   FAQ CARD
+========================================= */
+
+.about-faq-item {
+    min-width: 0;
+
+    background: #ffffff;
+    border: 1px solid #e8e9e7;
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* Open State */
+
+.about-faq-item[open] {
+    border-color: rgba(72, 169, 0, 0.35);
+    box-shadow: 0 10px 28px rgba(6, 51, 88, 0.045);
+}
+
+/* =========================================
+   QUESTION
+========================================= */
+
+.about-faq-item summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+    min-height: 70px;
+
+    padding: 20px 24px;
+
+    cursor: pointer;
+    list-style: none;
+
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.6;
+
+    color: var(--primary);
+
+    transition: color 0.3s ease;
+}
+
+/* Hide Default Arrow */
+
+.about-faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.about-faq-item summary::marker {
+    content: "";
+}
+
+.about-faq-item summary:hover {
+    color: var(--accent-dark);
+}
+
+/* =========================================
+   CIRCULAR PLUS / MINUS ICON
+========================================= */
+
+.about-faq-icon {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 28px;
+    height: 28px;
+
+    background: var(--accent-dark);
+    border-radius: 50%;
+
+    flex-shrink: 0;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+/* Horizontal Line */
+
+.about-faq-icon::before {
+    content: "";
+
+    position: absolute;
+    width: 11px;
+    height: 1.5px;
+
+    background: #ffffff;
+    border-radius: 2px;
+}
+
+/* Vertical Line */
+
+.about-faq-icon::after {
+    content: "";
+
+    position: absolute;
+    width: 1.5px;
+    height: 11px;
+
+    background: #ffffff;
+    border-radius: 2px;
+
+    transition: transform 0.3s ease;
+}
+
+/* Turn Plus Into Minus */
+
+.about-faq-item[open] .about-faq-icon::after {
+    transform: rotate(90deg);
+}
+
+.about-faq-item[open] .about-faq-icon {
+    background: var(--primary);
+}
+
+/* =========================================
+   ANSWER CONTENT
+========================================= */
+
+.about-faq-answer {
+    padding: 0 24px 24px;
+}
+
+.about-faq-answer p {
+    padding-top: 17px;
+
+    border-top: 1px solid var(--border);
+
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.9;
+
+    color: var(--muted);
+}
+
+/* Links Inside Answers */
+
+.about-faq-answer a {
+    color: var(--accent-dark);
+    font-weight: 600;
+    overflow-wrap: anywhere;
+
+    transition: color 0.3s ease;
+}
+
+.about-faq-answer a:hover {
+    color: var(--primary);
+}
+
+/* =========================================
+   ENTRANCE ANIMATION
+========================================= */
+
+@keyframes faqFadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.about-faq.faq-visible .about-faq-item {
+    animation: faqFadeUp 0.65s ease both;
+}
+
+/* Staggered Cards */
+
+.about-faq.faq-visible .about-faq-item:nth-child(1) {
+    animation-delay: 0.05s;
+}
+
+.about-faq.faq-visible .about-faq-item:nth-child(2) {
+    animation-delay: 0.10s;
+}
+
+.about-faq.faq-visible .about-faq-item:nth-child(3) {
+    animation-delay: 0.15s;
+}
+
+.about-faq.faq-visible .about-faq-item:nth-child(4) {
+    animation-delay: 0.20s;
+}
+
+.about-faq.faq-visible .about-faq-item:nth-child(5) {
+    animation-delay: 0.25s;
+}
+
+.about-faq.faq-visible .about-faq-item:nth-child(6) {
+    animation-delay: 0.30s;
+}
+
+.about-faq.faq-visible .about-faq-item:nth-child(7) {
+    animation-delay: 0.35s;
+}
+
+.about-faq.faq-visible .about-faq-item:nth-child(8) {
+    animation-delay: 0.40s;
+}
+
+.about-faq.faq-visible .about-faq-item:nth-child(9) {
+    animation-delay: 0.45s;
+}
+
+.about-faq.faq-visible .about-faq-item:nth-child(10) {
+    animation-delay: 0.50s;
+}
+
+/* =========================================
+   LARGE TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .about-faq {
+        padding: 80px 0 90px;
+    }
+
+    .about-faq-container {
+        padding: 0 25px;
+    }
+
+    .about-faq-grid {
+        gap: 18px;
+    }
+
+    .about-faq-item summary {
+        padding: 18px 20px;
+        font-size: 13px;
+    }
+
+    .about-faq-answer {
+        padding: 0 20px 22px;
+    }
+
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .about-faq-heading h2 {
+        font-size: 38px;
+    }
+
+    .about-faq-grid {
+        gap: 15px;
+    }
+
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .about-faq {
+        padding: 65px 0 75px;
+    }
+
+    .about-faq-container {
+        padding: 0 22px;
+    }
+
+    .about-faq-heading {
+        margin-bottom: 32px;
+    }
+
+    .about-faq-heading h2 {
+        font-size: 34px;
+    }
+
+    .about-faq-heading p {
+        font-size: 13px;
+    }
+
+    /* One Column */
+
+    .about-faq-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .about-faq-item summary {
+        min-height: 65px;
+        padding: 17px 20px;
+        font-size: 13px;
+    }
+
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .about-faq {
+        padding: 55px 0 65px;
+    }
+
+    .about-faq-container {
+        padding: 0 17px;
+    }
+
+    .about-faq-label {
+        font-size: 10px;
+        letter-spacing: 1.5px;
+    }
+
+    .about-faq-heading h2 {
+        font-size: 29px;
+    }
+
+    .about-faq-heading p {
+        font-size: 12px;
+    }
+
+    .about-faq-item {
+        border-radius: 9px;
+    }
+
+    .about-faq-item summary {
+        min-height: 62px;
+        padding: 16px 17px;
+        gap: 12px;
+
+        font-size: 12px;
+    }
+
+    .about-faq-icon {
+        width: 26px;
+        height: 26px;
+    }
+
+    .about-faq-answer {
+        padding: 0 17px 19px;
+    }
+
+    .about-faq-answer p {
+        font-size: 12px;
+        line-height: 1.85;
+    }
+
+}
+
+/* =========================================
+   VERY SMALL SCREENS
+========================================= */
+
+@media (max-width: 360px) {
+
+    .about-faq-container {
+        padding: 0 14px;
+    }
+
+    .about-faq-heading h2 {
+        font-size: 27px;
+    }
+
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .about-faq-item,
+    .about-faq-icon,
+    .about-faq-icon::after {
+        transition: none;
+    }
+
+    .about-faq.faq-visible .about-faq-item {
+        animation: none;
+    }
+
+}
+
+
+
+
+/* =========================================
+   PHYSIOCARE CLINIC
+   SERVICES PAGE - HERO
+========================================= */
+
+.services-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    min-height: 540px;
+
+    overflow: hidden;
+    isolation: isolate;
+
+    background: var(--primary);
+}
+
+/* =========================================
+   BACKGROUND IMAGE
+========================================= */
+
+.services-hero-background {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+
+    background-image: url("../img/services-hero.png");
+    background-size: cover;
+    background-position: center 45%;
+    background-repeat: no-repeat;
+
+    animation: servicesHeroZoom 12s ease-out both;
+}
+
+/* =========================================
+   GRADIENT OVERLAY
+========================================= */
+
+.services-hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    background: linear-gradient(90deg,
+            rgba(3, 38, 65, 0.94) 0%,
+            rgba(3, 38, 65, 0.85) 38%,
+            rgba(3, 38, 65, 0.48) 70%,
+            rgba(3, 38, 65, 0.22) 100%);
+}
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.services-hero-container {
+    width: 100%;
+    max-width: 1320px;
+
+    margin: 0 auto;
+    padding: 100px 35px;
+}
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.services-hero-content {
+    max-width: 700px;
+
+    animation: servicesHeroFadeUp 0.9s ease both;
+}
+
+/* =========================================
+   SMALL LABEL
+========================================= */
+
+.services-hero-label {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    margin-bottom: 25px;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+
+    color: #a3e276;
+}
+
+.services-hero-line {
+    display: block;
+
+    width: 30px;
+    height: 2px;
+
+    background: var(--accent);
+    flex-shrink: 0;
+}
+
+/* =========================================
+   MAIN HEADING
+========================================= */
+
+.services-hero h1 {
+    margin-bottom: 25px;
+
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(46px, 5vw, 72px);
+    font-weight: 400;
+    line-height: 1.12;
+    letter-spacing: -1.5px;
+
+    color: #ffffff;
+}
+
+.services-hero h1 em {
+    font-weight: 400;
+    color: #a3e276;
+}
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.services-hero-description {
+    max-width: 600px;
+
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.95;
+
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* =========================================
+   DECORATIVE ACCENT
+========================================= */
+
+.services-hero-accent {
+    width: 75px;
+    height: 3px;
+
+    margin-top: 35px;
+
+    background: var(--accent);
+    border-radius: 3px;
+}
+
+/* =========================================
+   BACKGROUND ZOOM ANIMATION
+========================================= */
+
+@keyframes servicesHeroZoom {
+
+    from {
+        transform: scale(1.08);
+    }
+
+    to {
+        transform: scale(1);
+    }
+
+}
+
+/* =========================================
+   CONTENT ENTRANCE ANIMATION
+========================================= */
+
+@keyframes servicesHeroFadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+/* =========================================
+   LARGE TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .services-hero {
+        min-height: 500px;
+    }
+
+    .services-hero-container {
+        padding: 85px 25px;
+    }
+
+    .services-hero-content {
+        max-width: 630px;
+    }
+
+    .services-hero h1 {
+        font-size: 60px;
+    }
+
+    .services-hero-description {
+        font-size: 14px;
+    }
+
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .services-hero {
+        min-height: 470px;
+    }
+
+    .services-hero-overlay {
+        background: linear-gradient(90deg,
+                rgba(3, 38, 65, 0.93) 0%,
+                rgba(3, 38, 65, 0.76) 60%,
+                rgba(3, 38, 65, 0.45) 100%);
+    }
+
+    .services-hero h1 {
+        font-size: 54px;
+    }
+
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .services-hero {
+        min-height: 450px;
+    }
+
+    .services-hero-container {
+        padding: 75px 22px;
+    }
+
+    .services-hero-content {
+        max-width: 100%;
+    }
+
+    .services-hero-background {
+        background-position: 60% center;
+    }
+
+    .services-hero-overlay {
+        background: linear-gradient(90deg,
+                rgba(3, 38, 65, 0.94) 0%,
+                rgba(3, 38, 65, 0.85) 55%,
+                rgba(3, 38, 65, 0.65) 100%);
+    }
+
+    .services-hero-label {
+        font-size: 10px;
+        letter-spacing: 1.8px;
+    }
+
+    .services-hero h1 {
+        font-size: 46px;
+        margin-bottom: 20px;
+    }
+
+    .services-hero-description {
+        font-size: 14px;
+        line-height: 1.85;
+    }
+
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .services-hero {
+        min-height: 420px;
+    }
+
+    .services-hero-container {
+        padding: 65px 17px;
+    }
+
+    .services-hero-label {
+        font-size: 9px;
+        letter-spacing: 1.4px;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .services-hero-line {
+        width: 23px;
+    }
+
+    .services-hero h1 {
+        font-size: 40px;
+        letter-spacing: -1px;
+    }
+
+    .services-hero-description {
+        font-size: 13px;
+        line-height: 1.85;
+    }
+
+    .services-hero-accent {
+        margin-top: 27px;
+        width: 60px;
+    }
+
+}
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+
+    .services-hero-container {
+        padding: 60px 14px;
+    }
+
+    .services-hero h1 {
+        font-size: 36px;
+    }
+
+    .services-hero-description {
+        font-size: 12px;
+    }
+
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .services-hero-background,
+    .services-hero-content {
+        animation: none;
+    }
+
+}
+
+
+
+
+/* =========================================
+   PHYSIOCARE CLINIC
+   SERVICES - INTRODUCTION SECTION
+========================================= */
+
+.services-intro {
+    position: relative;
+    width: 100%;
+
+    background: #f7f6f3;
+
+    padding: 85px 0 90px;
+
+    overflow: hidden;
+}
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.services-intro-container {
+    max-width: 1320px;
+
+    margin: 0 auto;
+    padding: 0 35px;
+}
+
+/* =========================================
+   SMALL SECTION LABEL
+========================================= */
+
+.services-intro-label {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+    margin-bottom: 28px;
+
+    font-family: var(--font-main);
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+
+    color: var(--accent-dark);
+}
+
+/* Decorative Green Line */
+
+.services-intro-line {
+    display: block;
+
+    width: 30px;
+    height: 2px;
+
+    background: var(--accent);
+
+    flex-shrink: 0;
+}
+
+/* =========================================
+   MAIN HEADING
+========================================= */
+
+.services-intro-title {
+    margin-bottom: 25px;
+
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(34px, 4vw, 52px);
+
+    font-weight: 400;
+    line-height: 1.2;
+
+    letter-spacing: -1px;
+
+    color: var(--primary);
+}
+
+/* =========================================
+   INTRODUCTION DESCRIPTION
+========================================= */
+
+.services-intro-description {
+    max-width: 790px;
+
+    font-family: var(--font-main);
+    font-size: 16px;
+
+    font-weight: 400;
+    line-height: 2;
+
+    color: var(--muted);
+}
+
+/* =========================================
+   AUTOMATIC ENTRANCE ANIMATION
+========================================= */
+
+@keyframes servicesIntroFadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.services-intro.is-visible .services-intro-label {
+    animation: servicesIntroFadeUp 0.7s ease both;
+}
+
+.services-intro.is-visible .services-intro-title {
+    animation: servicesIntroFadeUp 0.8s ease 0.12s both;
+}
+
+.services-intro.is-visible .services-intro-description {
+    animation: servicesIntroFadeUp 0.9s ease 0.22s both;
+}
+
+/* =========================================
+   LARGE TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .services-intro {
+        padding: 75px 0 80px;
+    }
+
+    .services-intro-container {
+        padding: 0 25px;
+    }
+
+    .services-intro-title {
+        font-size: 46px;
+    }
+
+    .services-intro-description {
+        font-size: 15px;
+    }
+
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .services-intro {
+        padding: 70px 0 75px;
+    }
+
+    .services-intro-title {
+        font-size: 42px;
+    }
+
+    .services-intro-description {
+        max-width: 100%;
+        font-size: 14px;
+        line-height: 1.9;
+    }
+
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .services-intro {
+        padding: 60px 0 65px;
+    }
+
+    .services-intro-container {
+        padding: 0 22px;
+    }
+
+    .services-intro-label {
+        margin-bottom: 22px;
+        font-size: 10px;
+        letter-spacing: 1.8px;
+    }
+
+    .services-intro-title {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .services-intro-description {
+        font-size: 14px;
+        line-height: 1.85;
+    }
+
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .services-intro {
+        padding: 50px 0 55px;
+    }
+
+    .services-intro-container {
+        padding: 0 17px;
+    }
+
+    .services-intro-label {
+        gap: 10px;
+        margin-bottom: 18px;
+
+        font-size: 9px;
+        letter-spacing: 1.5px;
+    }
+
+    .services-intro-line {
+        width: 23px;
+    }
+
+    .services-intro-title {
+        font-size: 30px;
+        line-height: 1.25;
+    }
+
+    .services-intro-description {
+        font-size: 13px;
+        line-height: 1.85;
+    }
+
+}
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+
+    .services-intro-container {
+        padding: 0 14px;
+    }
+
+    .services-intro-title {
+        font-size: 27px;
+    }
+
+    .services-intro-description {
+        font-size: 12px;
+    }
+
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .services-intro.is-visible .services-intro-label,
+
+    .services-intro.is-visible .services-intro-title,
+
+    .services-intro.is-visible .services-intro-description {
+        animation: none;
+    }
+
+}
+
+
+
+/* =========================================
+   PHYSIOCARE CLINIC
+   SERVICES - MUSCULOSKELETAL PHYSIOTHERAPY
+========================================= */
+
+.services-musculo {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    background: #ffffff;
+
+    padding: 100px 0 115px;
+}
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.services-musculo-container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 35px;
+
+    display: grid;
+    grid-template-columns: 1.08fr 0.92fr;
+    align-items: center;
+
+    gap: 75px;
+}
+
+/* =========================================
+   LEFT SIDE CONTENT
+========================================= */
+
+.services-musculo-content {
+    min-width: 0;
+}
+
+/* =========================================
+   SECTION LABEL
+========================================= */
+
+.services-musculo-label {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    margin-bottom: 24px;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    color: var(--accent-dark);
+}
+
+.services-musculo-line {
+    width: 28px;
+    height: 2px;
+
+    background: var(--accent);
+    flex-shrink: 0;
+}
+
+/* =========================================
+   MAIN HEADING
+========================================= */
+
+.services-musculo-content h2 {
+    margin-bottom: 15px;
+
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(34px, 3.5vw, 49px);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -1px;
+
+    color: var(--primary);
+}
+
+.services-musculo-content h2 em {
+    font-weight: 400;
+    color: var(--accent-dark);
+}
+
+/* =========================================
+   ARABIC SUBTITLE
+========================================= */
+
+.services-musculo-arabic {
+    margin-bottom: 30px;
+
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.8;
+
+    color: var(--muted);
+
+    text-align: left;
+}
+
+/* =========================================
+   HIGHLIGHT TEXT
+========================================= */
+
+.services-musculo-highlight {
+    margin-bottom: 20px;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.7px;
+    line-height: 1.7;
+
+    color: var(--accent-dark);
+}
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.services-musculo-description {
+    margin-bottom: 20px;
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.95;
+
+    color: var(--muted);
+}
+
+/* =========================================
+   CONDITIONS
+========================================= */
+
+.services-musculo-conditions {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.services-musculo-conditions h3,
+.services-musculo-approach h3 {
+    margin-bottom: 20px;
+
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 1.4;
+
+    color: var(--primary);
+}
+
+/* =========================================
+   CONDITIONS LIST
+========================================= */
+
+.services-musculo-conditions ul {
+    display: flex;
+    flex-direction: column;
+
+    gap: 13px;
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.services-musculo-conditions li {
+    position: relative;
+    padding-left: 27px;
+
+    font-size: 14px;
+    line-height: 1.7;
+
+    color: var(--muted);
+}
+
+/* Green Arrows */
+
+.services-musculo-conditions li::before {
+    content: "→";
+
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    font-size: 17px;
+    color: var(--accent-dark);
+}
+
+/* =========================================
+   TREATMENT APPROACH
+========================================= */
+
+.services-musculo-approach {
+    margin-top: 35px;
+}
+
+.services-musculo-approach p {
+    font-size: 14px;
+    line-height: 1.95;
+
+    color: var(--muted);
+}
+
+/* =========================================
+   CONTACT BUTTONS
+========================================= */
+
+.services-musculo-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 15px;
+    margin-top: 35px;
+}
+
+.services-musculo-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 13px;
+
+    min-height: 50px;
+    padding: 14px 23px;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+
+/* Primary Button */
+
+.services-musculo-btn.primary {
+    background: var(--accent-dark);
+    color: #ffffff;
+
+    border: 1px solid var(--accent-dark);
+}
+
+.services-musculo-btn.primary:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    transform: translateY(-3px);
+}
+
+/* Secondary Button */
+
+.services-musculo-btn.secondary {
+    background: transparent;
+    color: var(--primary);
+
+    border: 1px solid rgba(6, 51, 88, 0.25);
+}
+
+.services-musculo-btn.secondary:hover {
+    background: var(--primary);
+    color: #ffffff;
+    border-color: var(--primary);
+
+    transform: translateY(-3px);
+}
+
+/* =========================================
+   RIGHT SIDE IMAGE
+========================================= */
+
+.services-musculo-visual {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+}
+
+.services-musculo-image-wrapper {
+    position: relative;
+
+    width: 100%;
+    height: 650px;
+
+    overflow: hidden;
+    border-radius: 5px;
+
+    box-shadow: 0 25px 55px rgba(6, 51, 88, 0.12);
+}
+
+.services-musculo-image {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.8s ease;
+}
+
+.services-musculo-image-wrapper:hover .services-musculo-image {
+    transform: scale(1.04);
+}
+
+/* Decorative Green Line */
+
+.services-musculo-image-wrapper::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 95px;
+    height: 5px;
+
+    background: var(--accent);
+    z-index: 2;
+}
+
+/* =========================================
+   IMAGE CAPTION
+========================================= */
+
+.services-musculo-image-caption {
+    position: absolute;
+    bottom: -20px;
+    left: -20px;
+
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    padding: 18px 22px;
+
+    background: var(--primary);
+    color: #ffffff;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+
+    box-shadow: 0 12px 30px rgba(6, 51, 88, 0.15);
+}
+
+.services-musculo-caption-dot {
+    width: 8px;
+    height: 8px;
+
+    background: var(--accent);
+    border-radius: 50%;
+
+    flex-shrink: 0;
+}
+
+/* =========================================
+   AUTOMATIC ENTRANCE ANIMATIONS
+========================================= */
+
+@keyframes musculoFadeLeft {
+
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+@keyframes musculoFadeRight {
+
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+.services-musculo.is-visible .services-musculo-content {
+    animation: musculoFadeLeft 0.85s ease both;
+}
+
+.services-musculo.is-visible .services-musculo-visual {
+    animation: musculoFadeRight 0.95s ease 0.15s both;
+}
+
+/* =========================================
+   LARGE TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .services-musculo {
+        padding: 85px 0 100px;
+    }
+
+    .services-musculo-container {
+        padding: 0 25px;
+        gap: 45px;
+    }
+
+    .services-musculo-content h2 {
+        font-size: 40px;
+    }
+
+    .services-musculo-image-wrapper {
+        height: 580px;
+    }
+
+    .services-musculo-description,
+    .services-musculo-approach p {
+        font-size: 13px;
+    }
+
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .services-musculo-container {
+        grid-template-columns: 1fr;
+        gap: 55px;
+    }
+
+    .services-musculo-content {
+        max-width: 750px;
+    }
+
+    .services-musculo-visual {
+        max-width: 750px;
+    }
+
+    .services-musculo-image-wrapper {
+        height: 480px;
+    }
+
+    .services-musculo-content h2 {
+        font-size: 43px;
+    }
+
+    .services-musculo-description,
+    .services-musculo-approach p {
+        font-size: 14px;
+    }
+
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .services-musculo {
+        padding: 65px 0 80px;
+    }
+
+    .services-musculo-container {
+        padding: 0 22px;
+        gap: 45px;
+    }
+
+    .services-musculo-content h2 {
+        font-size: 37px;
+    }
+
+    .services-musculo-arabic {
+        font-size: 15px;
+    }
+
+    .services-musculo-description,
+    .services-musculo-approach p {
+        font-size: 13px;
+        line-height: 1.85;
+    }
+
+    .services-musculo-image-wrapper {
+        height: 420px;
+    }
+
+    .services-musculo-image-caption {
+        left: 15px;
+    }
+
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .services-musculo {
+        padding: 55px 0 70px;
+    }
+
+    .services-musculo-container {
+        padding: 0 17px;
+        gap: 40px;
+    }
+
+    .services-musculo-label {
+        font-size: 9px;
+        letter-spacing: 1.3px;
+    }
+
+    .services-musculo-content h2 {
+        font-size: 32px;
+    }
+
+    .services-musculo-arabic {
+        font-size: 14px;
+        margin-bottom: 23px;
+    }
+
+    .services-musculo-highlight {
+        font-size: 10px;
+        letter-spacing: 1.2px;
+    }
+
+    .services-musculo-description,
+    .services-musculo-approach p {
+        font-size: 12px;
+    }
+
+    .services-musculo-conditions h3,
+    .services-musculo-approach h3 {
+        font-size: 21px;
+    }
+
+    .services-musculo-conditions li {
+        font-size: 12px;
+    }
+
+    .services-musculo-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .services-musculo-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .services-musculo-image-wrapper {
+        height: 340px;
+    }
+
+    .services-musculo-image-caption {
+        bottom: -15px;
+        left: 12px;
+
+        padding: 13px 15px;
+        font-size: 9px;
+    }
+
+}
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+
+    .services-musculo-container {
+        padding: 0 14px;
+    }
+
+    .services-musculo-content h2 {
+        font-size: 29px;
+    }
+
+    .services-musculo-image-wrapper {
+        height: 290px;
+    }
+
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .services-musculo.is-visible .services-musculo-content,
+
+    .services-musculo.is-visible .services-musculo-visual {
+        animation: none;
+    }
+
+    .services-musculo-image,
+    .services-musculo-btn {
+        transition: none;
+    }
+
+}
+
+
+/* =========================================
+   PHYSIOCARE CLINIC
+   SERVICES - SPORTS REHABILITATION
+========================================= */
+
+.services-sports {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    background: #f7f6f3;
+
+    padding: 100px 0 115px;
+}
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.services-sports-container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 35px;
+
+    display: grid;
+    grid-template-columns: 0.92fr 1.08fr;
+    align-items: center;
+
+    gap: 75px;
+}
+
+/* =========================================
+   LEFT SIDE - IMAGE
+========================================= */
+
+.services-sports-visual {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+}
+
+.services-sports-image-wrapper {
+    position: relative;
+
+    width: 100%;
+    height: 650px;
+
+    overflow: hidden;
+    border-radius: 5px;
+
+    box-shadow: 0 25px 55px rgba(6, 51, 88, 0.12);
+}
+
+.services-sports-image {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.8s ease;
+}
+
+.services-sports-image-wrapper:hover .services-sports-image {
+    transform: scale(1.04);
+}
+
+/* Decorative Green Line */
+
+.services-sports-image-wrapper::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 95px;
+    height: 5px;
+
+    background: var(--accent);
+    z-index: 2;
+}
+
+/* =========================================
+   IMAGE CAPTION
+========================================= */
+
+.services-sports-image-caption {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    padding: 18px 22px;
+
+    background: var(--primary);
+    color: #ffffff;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+
+    box-shadow: 0 12px 30px rgba(6, 51, 88, 0.15);
+}
+
+.services-sports-caption-dot {
+    width: 8px;
+    height: 8px;
+
+    background: var(--accent);
+    border-radius: 50%;
+
+    flex-shrink: 0;
+}
+
+/* =========================================
+   RIGHT SIDE CONTENT
+========================================= */
+
+.services-sports-content {
+    min-width: 0;
+}
+
+/* =========================================
+   SECTION LABEL
+========================================= */
+
+.services-sports-label {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    margin-bottom: 24px;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    color: var(--accent-dark);
+}
+
+.services-sports-line {
+    width: 28px;
+    height: 2px;
+
+    background: var(--accent);
+    flex-shrink: 0;
+}
+
+/* =========================================
+   MAIN HEADING
+========================================= */
+
+.services-sports-content h2 {
+    margin-bottom: 15px;
+
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(34px, 3.5vw, 49px);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -1px;
+
+    color: var(--primary);
+}
+
+.services-sports-content h2 em {
+    font-weight: 400;
+    color: var(--accent-dark);
+}
+
+/* =========================================
+   ARABIC SUBTITLE
+========================================= */
+
+.services-sports-arabic {
+    margin-bottom: 30px;
+
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.8;
+
+    color: var(--muted);
+    text-align: left;
+}
+
+/* =========================================
+   HIGHLIGHT TEXT
+========================================= */
+
+.services-sports-highlight {
+    margin-bottom: 20px;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.7px;
+    line-height: 1.7;
+
+    color: var(--accent-dark);
+}
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.services-sports-description {
+    margin-bottom: 20px;
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.95;
+
+    color: var(--muted);
+}
+
+/* =========================================
+   CONDITIONS
+========================================= */
+
+.services-sports-conditions {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.services-sports-conditions h3,
+.services-sports-approach h3,
+.services-sports-why h3 {
+    margin-bottom: 20px;
+
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 1.4;
+
+    color: var(--primary);
+}
+
+/* =========================================
+   CONDITIONS LIST
+========================================= */
+
+.services-sports-conditions ul {
+    display: flex;
+    flex-direction: column;
+
+    gap: 13px;
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.services-sports-conditions li {
+    position: relative;
+    padding-left: 27px;
+
+    font-size: 14px;
+    line-height: 1.7;
+
+    color: var(--muted);
+}
+
+/* Green Arrows */
+
+.services-sports-conditions li::before {
+    content: "→";
+
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    font-size: 17px;
+    color: var(--accent-dark);
+}
+
+.services-sports-conditions li strong {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* =========================================
+   REHABILITATION APPROACH
+========================================= */
+
+.services-sports-approach {
+    margin-top: 35px;
+}
+
+.services-sports-approach p {
+    margin-bottom: 17px;
+
+    font-size: 14px;
+    line-height: 1.95;
+
+    color: var(--muted);
+}
+
+/* =========================================
+   WHY CHOOSE PHYSIOCARE
+========================================= */
+
+.services-sports-why {
+    margin-top: 35px;
+}
+
+.services-sports-why p {
+    margin-bottom: 17px;
+
+    font-size: 14px;
+    line-height: 1.95;
+
+    color: var(--muted);
+}
+
+/* =========================================
+   AUTOMATIC ENTRANCE ANIMATIONS
+========================================= */
+
+@keyframes sportsFadeLeft {
+
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+@keyframes sportsFadeRight {
+
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+.services-sports.is-visible .services-sports-visual {
+    animation: sportsFadeLeft 0.95s ease both;
+}
+
+.services-sports.is-visible .services-sports-content {
+    animation: sportsFadeRight 0.85s ease 0.15s both;
+}
+
+/* =========================================
+   LARGE TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .services-sports {
+        padding: 85px 0 100px;
+    }
+
+    .services-sports-container {
+        padding: 0 25px;
+        gap: 45px;
+    }
+
+    .services-sports-content h2 {
+        font-size: 40px;
+    }
+
+    .services-sports-image-wrapper {
+        height: 580px;
+    }
+
+    .services-sports-description,
+    .services-sports-approach p,
+    .services-sports-why p {
+        font-size: 13px;
+    }
+
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .services-sports-container {
+        grid-template-columns: 1fr;
+        gap: 55px;
+    }
+
+    .services-sports-content {
+        order: 1;
+        max-width: 750px;
+    }
+
+    .services-sports-visual {
+        order: 2;
+        max-width: 750px;
+    }
+
+    .services-sports-image-wrapper {
+        height: 480px;
+    }
+
+    .services-sports-content h2 {
+        font-size: 43px;
+    }
+
+    .services-sports-description,
+    .services-sports-approach p,
+    .services-sports-why p {
+        font-size: 14px;
+    }
+
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .services-sports {
+        padding: 65px 0 80px;
+    }
+
+    .services-sports-container {
+        padding: 0 22px;
+        gap: 45px;
+    }
+
+    .services-sports-content h2 {
+        font-size: 37px;
+    }
+
+    .services-sports-arabic {
+        font-size: 15px;
+    }
+
+    .services-sports-description,
+    .services-sports-approach p,
+    .services-sports-why p {
+        font-size: 13px;
+        line-height: 1.85;
+    }
+
+    .services-sports-image-wrapper {
+        height: 420px;
+    }
+
+    .services-sports-image-caption {
+        right: 15px;
+    }
+
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .services-sports {
+        padding: 55px 0 70px;
+    }
+
+    .services-sports-container {
+        padding: 0 17px;
+        gap: 40px;
+    }
+
+    .services-sports-label {
+        font-size: 9px;
+        letter-spacing: 1.3px;
+    }
+
+    .services-sports-content h2 {
+        font-size: 32px;
+    }
+
+    .services-sports-arabic {
+        font-size: 14px;
+        margin-bottom: 23px;
+    }
+
+    .services-sports-highlight {
+        font-size: 10px;
+        letter-spacing: 1.2px;
+    }
+
+    .services-sports-description,
+    .services-sports-approach p,
+    .services-sports-why p {
+        font-size: 12px;
+    }
+
+    .services-sports-conditions h3,
+    .services-sports-approach h3,
+    .services-sports-why h3 {
+        font-size: 21px;
+    }
+
+    .services-sports-conditions li {
+        font-size: 12px;
+    }
+
+    .services-sports-image-wrapper {
+        height: 340px;
+    }
+
+    .services-sports-image-caption {
+        bottom: -15px;
+        right: 12px;
+
+        padding: 13px 15px;
+        font-size: 9px;
+    }
+
+}
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+
+    .services-sports-container {
+        padding: 0 14px;
+    }
+
+    .services-sports-content h2 {
+        font-size: 29px;
+    }
+
+    .services-sports-image-wrapper {
+        height: 290px;
+    }
+
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .services-sports.is-visible .services-sports-content,
+
+    .services-sports.is-visible .services-sports-visual {
+        animation: none;
+    }
+
+    .services-sports-image {
+        transition: none;
+    }
+
+}
+
+
+
+/* =========================================
+   PHYSIOCARE CLINIC
+   SERVICES - SHOCKWAVE THERAPY
+========================================= */
+
+.services-shockwave {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    background: #ffffff;
+
+    padding: 100px 0 115px;
+}
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.services-shockwave-container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 35px;
+
+    display: grid;
+    grid-template-columns: 1.08fr 0.92fr;
+    align-items: center;
+
+    gap: 75px;
+}
+
+/* =========================================
+   LEFT SIDE CONTENT
+========================================= */
+
+.services-shockwave-content {
+    min-width: 0;
+}
+
+/* =========================================
+   SECTION LABEL
+========================================= */
+
+.services-shockwave-label {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    margin-bottom: 24px;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    color: var(--accent-dark);
+}
+
+.services-shockwave-line {
+    display: block;
+    width: 28px;
+    height: 2px;
+
+    background: var(--accent);
+    flex-shrink: 0;
+}
+
+/* =========================================
+   MAIN HEADING
+========================================= */
+
+.services-shockwave-content h2 {
+    margin-bottom: 15px;
+
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(34px, 3.5vw, 49px);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -1px;
+
+    color: var(--primary);
+}
+
+.services-shockwave-content h2 em {
+    font-weight: 400;
+    color: var(--accent-dark);
+}
+
+/* =========================================
+   ARABIC SUBTITLE
+========================================= */
+
+.services-shockwave-arabic {
+    margin-bottom: 30px;
+
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.8;
+
+    color: var(--muted);
+    text-align: left;
+}
+
+/* =========================================
+   HIGHLIGHT TEXT
+========================================= */
+
+.services-shockwave-highlight {
+    margin-bottom: 20px;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.7px;
+    line-height: 1.7;
+
+    color: var(--accent-dark);
+}
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.services-shockwave-description {
+    margin-bottom: 20px;
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.95;
+
+    color: var(--muted);
+}
+
+/* =========================================
+   CONTENT SUBSECTIONS
+========================================= */
+
+.services-shockwave-about,
+.services-shockwave-conditions,
+.services-shockwave-approach,
+.services-shockwave-comfort {
+    margin-top: 35px;
+}
+
+.services-shockwave-about h3,
+.services-shockwave-conditions h3,
+.services-shockwave-approach h3,
+.services-shockwave-comfort h3 {
+    margin-bottom: 20px;
+
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 1.4;
+
+    color: var(--primary);
+}
+
+/* =========================================
+   PARAGRAPHS
+========================================= */
+
+.services-shockwave-about p,
+.services-shockwave-approach p,
+.services-shockwave-comfort p {
+    margin-bottom: 17px;
+
+    font-size: 14px;
+    line-height: 1.95;
+
+    color: var(--muted);
+}
+
+/* =========================================
+   CONDITIONS LIST
+========================================= */
+
+.services-shockwave-conditions ul {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.services-shockwave-conditions li {
+    position: relative;
+    padding-left: 27px;
+
+    font-size: 14px;
+    line-height: 1.7;
+
+    color: var(--muted);
+}
+
+/* Green Arrows */
+
+.services-shockwave-conditions li::before {
+    content: "→";
+
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    font-size: 17px;
+    color: var(--accent-dark);
+}
+
+.services-shockwave-conditions li strong {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* =========================================
+   RIGHT SIDE IMAGE
+========================================= */
+
+.services-shockwave-visual {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+}
+
+.services-shockwave-image-wrapper {
+    position: relative;
+
+    width: 100%;
+    height: 650px;
+
+    overflow: hidden;
+    border-radius: 5px;
+
+    box-shadow: 0 25px 55px rgba(6, 51, 88, 0.12);
+}
+
+.services-shockwave-image {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.8s ease;
+}
+
+.services-shockwave-image-wrapper:hover .services-shockwave-image {
+    transform: scale(1.04);
+}
+
+/* Decorative Green Line */
+
+.services-shockwave-image-wrapper::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 95px;
+    height: 5px;
+
+    background: var(--accent);
+    z-index: 2;
+}
+
+/* =========================================
+   IMAGE CAPTION
+========================================= */
+
+.services-shockwave-image-caption {
+    position: absolute;
+    bottom: -20px;
+    left: -20px;
+
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    padding: 18px 22px;
+
+    background: var(--primary);
+    color: #ffffff;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+
+    box-shadow: 0 12px 30px rgba(6, 51, 88, 0.15);
+}
+
+.services-shockwave-caption-dot {
+    width: 8px;
+    height: 8px;
+
+    background: var(--accent);
+    border-radius: 50%;
+
+    flex-shrink: 0;
+}
+
+/* =========================================
+   AUTOMATIC ENTRANCE ANIMATIONS
+========================================= */
+
+@keyframes shockwaveFadeLeft {
+
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+@keyframes shockwaveFadeRight {
+
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+.services-shockwave.is-visible .services-shockwave-content {
+    animation: shockwaveFadeLeft 0.85s ease both;
+}
+
+.services-shockwave.is-visible .services-shockwave-visual {
+    animation: shockwaveFadeRight 0.95s ease 0.15s both;
+}
+
+/* =========================================
+   LARGE TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .services-shockwave {
+        padding: 85px 0 100px;
+    }
+
+    .services-shockwave-container {
+        padding: 0 25px;
+        gap: 45px;
+    }
+
+    .services-shockwave-content h2 {
+        font-size: 40px;
+    }
+
+    .services-shockwave-image-wrapper {
+        height: 580px;
+    }
+
+    .services-shockwave-description,
+    .services-shockwave-about p,
+    .services-shockwave-approach p,
+    .services-shockwave-comfort p {
+        font-size: 13px;
+    }
+
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .services-shockwave-container {
+        grid-template-columns: 1fr;
+        gap: 55px;
+    }
+
+    .services-shockwave-content {
+        max-width: 750px;
+    }
+
+    .services-shockwave-visual {
+        max-width: 750px;
+    }
+
+    .services-shockwave-image-wrapper {
+        height: 480px;
+    }
+
+    .services-shockwave-content h2 {
+        font-size: 43px;
+    }
+
+    .services-shockwave-description,
+    .services-shockwave-about p,
+    .services-shockwave-approach p,
+    .services-shockwave-comfort p {
+        font-size: 14px;
+    }
+
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .services-shockwave {
+        padding: 65px 0 80px;
+    }
+
+    .services-shockwave-container {
+        padding: 0 22px;
+        gap: 45px;
+    }
+
+    .services-shockwave-content h2 {
+        font-size: 37px;
+    }
+
+    .services-shockwave-arabic {
+        font-size: 15px;
+    }
+
+    .services-shockwave-description,
+    .services-shockwave-about p,
+    .services-shockwave-approach p,
+    .services-shockwave-comfort p {
+        font-size: 13px;
+        line-height: 1.85;
+    }
+
+    .services-shockwave-image-wrapper {
+        height: 420px;
+    }
+
+    .services-shockwave-image-caption {
+        left: 15px;
+    }
+
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .services-shockwave {
+        padding: 55px 0 70px;
+    }
+
+    .services-shockwave-container {
+        padding: 0 17px;
+        gap: 40px;
+    }
+
+    .services-shockwave-label {
+        font-size: 9px;
+        letter-spacing: 1.3px;
+    }
+
+    .services-shockwave-content h2 {
+        font-size: 32px;
+    }
+
+    .services-shockwave-arabic {
+        font-size: 14px;
+        margin-bottom: 23px;
+    }
+
+    .services-shockwave-highlight {
+        font-size: 10px;
+        letter-spacing: 1.2px;
+    }
+
+    .services-shockwave-description,
+    .services-shockwave-about p,
+    .services-shockwave-approach p,
+    .services-shockwave-comfort p {
+        font-size: 12px;
+    }
+
+    .services-shockwave-about h3,
+    .services-shockwave-conditions h3,
+    .services-shockwave-approach h3,
+    .services-shockwave-comfort h3 {
+        font-size: 21px;
+    }
+
+    .services-shockwave-conditions li {
+        font-size: 12px;
+    }
+
+    .services-shockwave-image-wrapper {
+        height: 340px;
+    }
+
+    .services-shockwave-image-caption {
+        bottom: -15px;
+        left: 12px;
+
+        padding: 13px 15px;
+        font-size: 9px;
+    }
+
+}
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+
+    .services-shockwave-container {
+        padding: 0 14px;
+    }
+
+    .services-shockwave-content h2 {
+        font-size: 29px;
+    }
+
+    .services-shockwave-image-wrapper {
+        height: 290px;
+    }
+
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .services-shockwave.is-visible .services-shockwave-content,
+
+    .services-shockwave.is-visible .services-shockwave-visual {
+        animation: none;
+    }
+
+    .services-shockwave-image {
+        transition: none;
+    }
+
+}
+
+
+
+/* =========================================
+   PHYSIOCARE CLINIC
+   SERVICES - EMS TRAINING
+========================================= */
+
+.services-ems {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    background: #f7f6f3;
+
+    padding: 100px 0 115px;
+}
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.services-ems-container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 35px;
+
+    display: grid;
+    grid-template-columns: 0.92fr 1.08fr;
+    align-items: center;
+
+    gap: 75px;
+}
+
+/* =========================================
+   LEFT SIDE - IMAGE
+========================================= */
+
+.services-ems-visual {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+}
+
+.services-ems-image-wrapper {
+    position: relative;
+
+    width: 100%;
+    height: 650px;
+
+    overflow: hidden;
+    border-radius: 5px;
+
+    box-shadow: 0 25px 55px rgba(6, 51, 88, 0.12);
+}
+
+.services-ems-image {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.8s ease;
+}
+
+.services-ems-image-wrapper:hover .services-ems-image {
+    transform: scale(1.04);
+}
+
+/* Decorative Green Line */
+
+.services-ems-image-wrapper::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 95px;
+    height: 5px;
+
+    background: var(--accent);
+    z-index: 2;
+}
+
+/* =========================================
+   IMAGE CAPTION
+========================================= */
+
+.services-ems-image-caption {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    padding: 18px 22px;
+
+    background: var(--primary);
+    color: #ffffff;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+
+    box-shadow: 0 12px 30px rgba(6, 51, 88, 0.15);
+}
+
+.services-ems-caption-dot {
+    width: 8px;
+    height: 8px;
+
+    background: var(--accent);
+    border-radius: 50%;
+
+    flex-shrink: 0;
+}
+
+/* =========================================
+   RIGHT SIDE CONTENT
+========================================= */
+
+.services-ems-content {
+    min-width: 0;
+}
+
+/* =========================================
+   SECTION LABEL
+========================================= */
+
+.services-ems-label {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    margin-bottom: 24px;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    color: var(--accent-dark);
+}
+
+.services-ems-line {
+    display: block;
+    width: 28px;
+    height: 2px;
+
+    background: var(--accent);
+    flex-shrink: 0;
+}
+
+/* =========================================
+   MAIN HEADING
+========================================= */
+
+.services-ems-content h2 {
+    margin-bottom: 15px;
+
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(34px, 3.5vw, 49px);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -1px;
+
+    color: var(--primary);
+}
+
+.services-ems-content h2 em {
+    font-weight: 400;
+    color: var(--accent-dark);
+}
+
+/* =========================================
+   ARABIC SUBTITLE
+========================================= */
+
+.services-ems-arabic {
+    margin-bottom: 30px;
+
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.8;
+
+    color: var(--muted);
+    text-align: left;
+}
+
+/* =========================================
+   HIGHLIGHT TEXT
+========================================= */
+
+.services-ems-highlight {
+    margin-bottom: 20px;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.7px;
+    line-height: 1.7;
+
+    color: var(--accent-dark);
+}
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.services-ems-description {
+    margin-bottom: 20px;
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.95;
+
+    color: var(--muted);
+}
+
+/* =========================================
+   CONTENT SUBSECTIONS
+========================================= */
+
+.services-ems-about,
+.services-ems-benefits,
+.services-ems-approach,
+.services-ems-results {
+    margin-top: 35px;
+}
+
+.services-ems-about h3,
+.services-ems-benefits h3,
+.services-ems-approach h3,
+.services-ems-results h3 {
+    margin-bottom: 20px;
+
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 1.4;
+
+    color: var(--primary);
+}
+
+/* =========================================
+   PARAGRAPHS
+========================================= */
+
+.services-ems-about p,
+.services-ems-approach p,
+.services-ems-results p {
+    margin-bottom: 17px;
+
+    font-size: 14px;
+    line-height: 1.95;
+
+    color: var(--muted);
+}
+
+/* =========================================
+   BENEFITS LIST
+========================================= */
+
+.services-ems-benefits ul {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.services-ems-benefits li {
+    position: relative;
+    padding-left: 27px;
+
+    font-size: 14px;
+    line-height: 1.7;
+
+    color: var(--muted);
+}
+
+/* Green Arrows */
+
+.services-ems-benefits li::before {
+    content: "→";
+
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    font-size: 17px;
+    color: var(--accent-dark);
+}
+
+.services-ems-benefits li strong {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* =========================================
+   AUTOMATIC ENTRANCE ANIMATIONS
+========================================= */
+
+@keyframes emsFadeLeft {
+
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+@keyframes emsFadeRight {
+
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+.services-ems.is-visible .services-ems-visual {
+    animation: emsFadeLeft 0.95s ease both;
+}
+
+.services-ems.is-visible .services-ems-content {
+    animation: emsFadeRight 0.85s ease 0.15s both;
+}
+
+/* =========================================
+   LARGE TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .services-ems {
+        padding: 85px 0 100px;
+    }
+
+    .services-ems-container {
+        padding: 0 25px;
+        gap: 45px;
+    }
+
+    .services-ems-content h2 {
+        font-size: 40px;
+    }
+
+    .services-ems-image-wrapper {
+        height: 580px;
+    }
+
+    .services-ems-description,
+    .services-ems-about p,
+    .services-ems-approach p,
+    .services-ems-results p {
+        font-size: 13px;
+    }
+
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .services-ems-container {
+        grid-template-columns: 1fr;
+        gap: 55px;
+    }
+
+    .services-ems-content {
+        order: 1;
+        max-width: 750px;
+    }
+
+    .services-ems-visual {
+        order: 2;
+        max-width: 750px;
+    }
+
+    .services-ems-image-wrapper {
+        height: 480px;
+    }
+
+    .services-ems-content h2 {
+        font-size: 43px;
+    }
+
+    .services-ems-description,
+    .services-ems-about p,
+    .services-ems-approach p,
+    .services-ems-results p {
+        font-size: 14px;
+    }
+
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .services-ems {
+        padding: 65px 0 80px;
+    }
+
+    .services-ems-container {
+        padding: 0 22px;
+        gap: 45px;
+    }
+
+    .services-ems-content h2 {
+        font-size: 37px;
+    }
+
+    .services-ems-arabic {
+        font-size: 15px;
+    }
+
+    .services-ems-description,
+    .services-ems-about p,
+    .services-ems-approach p,
+    .services-ems-results p {
+        font-size: 13px;
+        line-height: 1.85;
+    }
+
+    .services-ems-image-wrapper {
+        height: 420px;
+    }
+
+    .services-ems-image-caption {
+        right: 15px;
+    }
+
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .services-ems {
+        padding: 55px 0 70px;
+    }
+
+    .services-ems-container {
+        padding: 0 17px;
+        gap: 40px;
+    }
+
+    .services-ems-label {
+        font-size: 9px;
+        letter-spacing: 1.3px;
+    }
+
+    .services-ems-content h2 {
+        font-size: 32px;
+    }
+
+    .services-ems-arabic {
+        font-size: 14px;
+        margin-bottom: 23px;
+    }
+
+    .services-ems-highlight {
+        font-size: 10px;
+        letter-spacing: 1.2px;
+    }
+
+    .services-ems-description,
+    .services-ems-about p,
+    .services-ems-approach p,
+    .services-ems-results p {
+        font-size: 12px;
+    }
+
+    .services-ems-about h3,
+    .services-ems-benefits h3,
+    .services-ems-approach h3,
+    .services-ems-results h3 {
+        font-size: 21px;
+    }
+
+    .services-ems-benefits li {
+        font-size: 12px;
+    }
+
+    .services-ems-image-wrapper {
+        height: 340px;
+    }
+
+    .services-ems-image-caption {
+        bottom: -15px;
+        right: 12px;
+
+        padding: 13px 15px;
+        font-size: 9px;
+    }
+
+}
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+
+    .services-ems-container {
+        padding: 0 14px;
+    }
+
+    .services-ems-content h2 {
+        font-size: 29px;
+    }
+
+    .services-ems-image-wrapper {
+        height: 290px;
+    }
+
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .services-ems.is-visible .services-ems-content,
+
+    .services-ems.is-visible .services-ems-visual {
+        animation: none;
+    }
+
+    .services-ems-image {
+        transition: none;
+    }
+
+}
+
+
+
+/* =========================================
+   PHYSIOCARE CLINIC
+   SERVICES - REHAB & PERSONAL TRAINING
+========================================= */
+
+.services-rehab {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    background: #ffffff;
+
+    padding: 100px 0 115px;
+}
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.services-rehab-container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 35px;
+
+    display: grid;
+    grid-template-columns: 1.08fr 0.92fr;
+    align-items: center;
+
+    gap: 75px;
+}
+
+/* =========================================
+   LEFT SIDE CONTENT
+========================================= */
+
+.services-rehab-content {
+    min-width: 0;
+}
+
+/* =========================================
+   SECTION LABEL
+========================================= */
+
+.services-rehab-label {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    margin-bottom: 24px;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    color: var(--accent-dark);
+}
+
+.services-rehab-line {
+    display: block;
+
+    width: 28px;
+    height: 2px;
+
+    background: var(--accent);
+    flex-shrink: 0;
+}
+
+/* =========================================
+   MAIN HEADING
+========================================= */
+
+.services-rehab-content h2 {
+    margin-bottom: 15px;
+
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(34px, 3.5vw, 49px);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -1px;
+
+    color: var(--primary);
+}
+
+.services-rehab-content h2 em {
+    font-weight: 400;
+    color: var(--accent-dark);
+}
+
+/* =========================================
+   ARABIC SUBTITLE
+========================================= */
+
+.services-rehab-arabic {
+    margin-bottom: 30px;
+
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.8;
+
+    color: var(--muted);
+    text-align: left;
+}
+
+/* =========================================
+   HIGHLIGHT TEXT
+========================================= */
+
+.services-rehab-highlight {
+    margin-bottom: 20px;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.7px;
+    line-height: 1.7;
+
+    color: var(--accent-dark);
+}
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.services-rehab-description {
+    margin-bottom: 20px;
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.95;
+
+    color: var(--muted);
+}
+
+/* =========================================
+   CONTENT SUBSECTIONS
+========================================= */
+
+.services-rehab-about,
+.services-rehab-offer,
+.services-rehab-approach,
+.services-rehab-football {
+    margin-top: 35px;
+}
+
+.services-rehab-about h3,
+.services-rehab-offer h3,
+.services-rehab-approach h3,
+.services-rehab-football h3 {
+    margin-bottom: 20px;
+
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 1.4;
+
+    color: var(--primary);
+}
+
+/* =========================================
+   PARAGRAPHS
+========================================= */
+
+.services-rehab-about p,
+.services-rehab-approach p,
+.services-rehab-football p {
+    margin-bottom: 17px;
+
+    font-size: 14px;
+    line-height: 1.95;
+
+    color: var(--muted);
+}
+
+/* =========================================
+   SERVICES LIST
+========================================= */
+
+.services-rehab-offer ul {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.services-rehab-offer li {
+    position: relative;
+    padding-left: 27px;
+
+    font-size: 14px;
+    line-height: 1.7;
+
+    color: var(--muted);
+}
+
+/* Green Arrows */
+
+.services-rehab-offer li::before {
+    content: "→";
+
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    font-size: 17px;
+    color: var(--accent-dark);
+}
+
+.services-rehab-offer li strong {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* =========================================
+   RIGHT SIDE IMAGE
+========================================= */
+
+.services-rehab-visual {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+}
+
+.services-rehab-image-wrapper {
+    position: relative;
+
+    width: 100%;
+    height: 650px;
+
+    overflow: hidden;
+    border-radius: 5px;
+
+    box-shadow: 0 25px 55px rgba(6, 51, 88, 0.12);
+}
+
+.services-rehab-image {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.8s ease;
+}
+
+.services-rehab-image-wrapper:hover .services-rehab-image {
+    transform: scale(1.04);
+}
+
+/* Decorative Green Line */
+
+.services-rehab-image-wrapper::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 95px;
+    height: 5px;
+
+    background: var(--accent);
+    z-index: 2;
+}
+
+/* =========================================
+   IMAGE CAPTION
+========================================= */
+
+.services-rehab-image-caption {
+    position: absolute;
+    bottom: -20px;
+    left: -20px;
+
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    padding: 18px 22px;
+
+    background: var(--primary);
+    color: #ffffff;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+
+    box-shadow: 0 12px 30px rgba(6, 51, 88, 0.15);
+}
+
+.services-rehab-caption-dot {
+    width: 8px;
+    height: 8px;
+
+    background: var(--accent);
+    border-radius: 50%;
+
+    flex-shrink: 0;
+}
+
+/* =========================================
+   AUTOMATIC ENTRANCE ANIMATIONS
+========================================= */
+
+@keyframes rehabFadeLeft {
+
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+@keyframes rehabFadeRight {
+
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+.services-rehab.is-visible .services-rehab-content {
+    animation: rehabFadeLeft 0.85s ease both;
+}
+
+.services-rehab.is-visible .services-rehab-visual {
+    animation: rehabFadeRight 0.95s ease 0.15s both;
+}
+
+/* =========================================
+   LARGE TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .services-rehab {
+        padding: 85px 0 100px;
+    }
+
+    .services-rehab-container {
+        padding: 0 25px;
+        gap: 45px;
+    }
+
+    .services-rehab-content h2 {
+        font-size: 40px;
+    }
+
+    .services-rehab-image-wrapper {
+        height: 580px;
+    }
+
+    .services-rehab-description,
+    .services-rehab-about p,
+    .services-rehab-approach p,
+    .services-rehab-football p {
+        font-size: 13px;
+    }
+
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .services-rehab-container {
+        grid-template-columns: 1fr;
+        gap: 55px;
+    }
+
+    .services-rehab-content {
+        max-width: 750px;
+    }
+
+    .services-rehab-visual {
+        max-width: 750px;
+    }
+
+    .services-rehab-image-wrapper {
+        height: 480px;
+    }
+
+    .services-rehab-content h2 {
+        font-size: 43px;
+    }
+
+    .services-rehab-description,
+    .services-rehab-about p,
+    .services-rehab-approach p,
+    .services-rehab-football p {
+        font-size: 14px;
+    }
+
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .services-rehab {
+        padding: 65px 0 80px;
+    }
+
+    .services-rehab-container {
+        padding: 0 22px;
+        gap: 45px;
+    }
+
+    .services-rehab-content h2 {
+        font-size: 37px;
+    }
+
+    .services-rehab-arabic {
+        font-size: 15px;
+    }
+
+    .services-rehab-description,
+    .services-rehab-about p,
+    .services-rehab-approach p,
+    .services-rehab-football p {
+        font-size: 13px;
+        line-height: 1.85;
+    }
+
+    .services-rehab-image-wrapper {
+        height: 420px;
+    }
+
+    .services-rehab-image-caption {
+        left: 15px;
+    }
+
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .services-rehab {
+        padding: 55px 0 70px;
+    }
+
+    .services-rehab-container {
+        padding: 0 17px;
+        gap: 40px;
+    }
+
+    .services-rehab-label {
+        font-size: 9px;
+        letter-spacing: 1.3px;
+    }
+
+    .services-rehab-content h2 {
+        font-size: 32px;
+    }
+
+    .services-rehab-arabic {
+        font-size: 14px;
+        margin-bottom: 23px;
+    }
+
+    .services-rehab-highlight {
+        font-size: 10px;
+        letter-spacing: 1.2px;
+    }
+
+    .services-rehab-description,
+    .services-rehab-about p,
+    .services-rehab-approach p,
+    .services-rehab-football p {
+        font-size: 12px;
+    }
+
+    .services-rehab-about h3,
+    .services-rehab-offer h3,
+    .services-rehab-approach h3,
+    .services-rehab-football h3 {
+        font-size: 21px;
+    }
+
+    .services-rehab-offer li {
+        font-size: 12px;
+    }
+
+    .services-rehab-image-wrapper {
+        height: 340px;
+    }
+
+    .services-rehab-image-caption {
+        bottom: -15px;
+        left: 12px;
+
+        padding: 13px 15px;
+        font-size: 9px;
+    }
+
+}
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+
+    .services-rehab-container {
+        padding: 0 14px;
+    }
+
+    .services-rehab-content h2 {
+        font-size: 29px;
+    }
+
+    .services-rehab-image-wrapper {
+        height: 290px;
+    }
+
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .services-rehab.is-visible .services-rehab-content,
+
+    .services-rehab.is-visible .services-rehab-visual {
+        animation: none;
+    }
+
+    .services-rehab-image {
+        transition: none;
+    }
+
+}
+
+
+
+/* =========================================
+   PHYSIOCARE CLINIC
+   SERVICES - MEDICAL MASSAGE
+========================================= */
+
+.services-massage {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    background: #f7f6f3;
+
+    padding: 100px 0 115px;
+}
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.services-massage-container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 35px;
+
+    display: grid;
+    grid-template-columns: 0.92fr 1.08fr;
+    align-items: center;
+
+    gap: 75px;
+}
+
+/* =========================================
+   LEFT SIDE - IMAGE
+========================================= */
+
+.services-massage-visual {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+}
+
+.services-massage-image-wrapper {
+    position: relative;
+
+    width: 100%;
+    height: 650px;
+
+    overflow: hidden;
+    border-radius: 5px;
+
+    box-shadow: 0 25px 55px rgba(6, 51, 88, 0.12);
+}
+
+.services-massage-image {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.8s ease;
+}
+
+.services-massage-image-wrapper:hover .services-massage-image {
+    transform: scale(1.04);
+}
+
+/* Decorative Green Line */
+
+.services-massage-image-wrapper::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 95px;
+    height: 5px;
+
+    background: var(--accent);
+    z-index: 2;
+}
+
+/* =========================================
+   IMAGE CAPTION
+========================================= */
+
+.services-massage-image-caption {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    padding: 18px 22px;
+
+    background: var(--primary);
+    color: #ffffff;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+
+    box-shadow: 0 12px 30px rgba(6, 51, 88, 0.15);
+}
+
+.services-massage-caption-dot {
+    width: 8px;
+    height: 8px;
+
+    background: var(--accent);
+    border-radius: 50%;
+
+    flex-shrink: 0;
+}
+
+/* =========================================
+   RIGHT SIDE CONTENT
+========================================= */
+
+.services-massage-content {
+    min-width: 0;
+}
+
+/* =========================================
+   SECTION LABEL
+========================================= */
+
+.services-massage-label {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    margin-bottom: 24px;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    color: var(--accent-dark);
+}
+
+.services-massage-line {
+    display: block;
+
+    width: 28px;
+    height: 2px;
+
+    background: var(--accent);
+    flex-shrink: 0;
+}
+
+/* =========================================
+   MAIN HEADING
+========================================= */
+
+.services-massage-content h2 {
+    margin-bottom: 15px;
+
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(34px, 3.5vw, 49px);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -1px;
+
+    color: var(--primary);
+}
+
+.services-massage-content h2 em {
+    font-weight: 400;
+    color: var(--accent-dark);
+}
+
+/* =========================================
+   ARABIC SUBTITLE
+========================================= */
+
+.services-massage-arabic {
+    margin-bottom: 30px;
+
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.8;
+
+    color: var(--muted);
+    text-align: left;
+}
+
+/* =========================================
+   HIGHLIGHT TEXT
+========================================= */
+
+.services-massage-highlight {
+    margin-bottom: 20px;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.7px;
+    line-height: 1.7;
+
+    color: var(--accent-dark);
+}
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.services-massage-description {
+    margin-bottom: 20px;
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.95;
+
+    color: var(--muted);
+}
+
+/* =========================================
+   CONTENT SUBSECTIONS
+========================================= */
+
+.services-massage-about,
+.services-massage-conditions,
+.services-massage-techniques,
+.services-massage-approach {
+    margin-top: 35px;
+}
+
+.services-massage-about h3,
+.services-massage-conditions h3,
+.services-massage-techniques h3,
+.services-massage-approach h3 {
+    margin-bottom: 20px;
+
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 1.4;
+
+    color: var(--primary);
+}
+
+/* =========================================
+   PARAGRAPHS
+========================================= */
+
+.services-massage-about p,
+.services-massage-techniques p,
+.services-massage-approach p {
+    margin-bottom: 17px;
+
+    font-size: 14px;
+    line-height: 1.95;
+
+    color: var(--muted);
+}
+
+/* =========================================
+   CONDITIONS LIST
+========================================= */
+
+.services-massage-conditions ul {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.services-massage-conditions li {
+    position: relative;
+    padding-left: 27px;
+
+    font-size: 14px;
+    line-height: 1.7;
+
+    color: var(--muted);
+}
+
+/* Green Arrows */
+
+.services-massage-conditions li::before {
+    content: "→";
+
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    font-size: 17px;
+    color: var(--accent-dark);
+}
+
+.services-massage-conditions li strong {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* =========================================
+   AUTOMATIC ENTRANCE ANIMATIONS
+========================================= */
+
+@keyframes massageFadeLeft {
+
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+@keyframes massageFadeRight {
+
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+.services-massage.is-visible .services-massage-visual {
+    animation: massageFadeLeft 0.95s ease both;
+}
+
+.services-massage.is-visible .services-massage-content {
+    animation: massageFadeRight 0.85s ease 0.15s both;
+}
+
+/* =========================================
+   LARGE TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .services-massage {
+        padding: 85px 0 100px;
+    }
+
+    .services-massage-container {
+        padding: 0 25px;
+        gap: 45px;
+    }
+
+    .services-massage-content h2 {
+        font-size: 40px;
+    }
+
+    .services-massage-image-wrapper {
+        height: 580px;
+    }
+
+    .services-massage-description,
+    .services-massage-about p,
+    .services-massage-techniques p,
+    .services-massage-approach p {
+        font-size: 13px;
+    }
+
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .services-massage-container {
+        grid-template-columns: 1fr;
+        gap: 55px;
+    }
+
+    .services-massage-content {
+        order: 1;
+        max-width: 750px;
+    }
+
+    .services-massage-visual {
+        order: 2;
+        max-width: 750px;
+    }
+
+    .services-massage-image-wrapper {
+        height: 480px;
+    }
+
+    .services-massage-content h2 {
+        font-size: 43px;
+    }
+
+    .services-massage-description,
+    .services-massage-about p,
+    .services-massage-techniques p,
+    .services-massage-approach p {
+        font-size: 14px;
+    }
+
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .services-massage {
+        padding: 65px 0 80px;
+    }
+
+    .services-massage-container {
+        padding: 0 22px;
+        gap: 45px;
+    }
+
+    .services-massage-content h2 {
+        font-size: 37px;
+    }
+
+    .services-massage-arabic {
+        font-size: 15px;
+    }
+
+    .services-massage-description,
+    .services-massage-about p,
+    .services-massage-techniques p,
+    .services-massage-approach p {
+        font-size: 13px;
+        line-height: 1.85;
+    }
+
+    .services-massage-image-wrapper {
+        height: 420px;
+    }
+
+    .services-massage-image-caption {
+        right: 15px;
+    }
+
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .services-massage {
+        padding: 55px 0 70px;
+    }
+
+    .services-massage-container {
+        padding: 0 17px;
+        gap: 40px;
+    }
+
+    .services-massage-label {
+        font-size: 9px;
+        letter-spacing: 1.3px;
+    }
+
+    .services-massage-content h2 {
+        font-size: 32px;
+    }
+
+    .services-massage-arabic {
+        font-size: 14px;
+        margin-bottom: 23px;
+    }
+
+    .services-massage-highlight {
+        font-size: 10px;
+        letter-spacing: 1.2px;
+    }
+
+    .services-massage-description,
+    .services-massage-about p,
+    .services-massage-techniques p,
+    .services-massage-approach p {
+        font-size: 12px;
+    }
+
+    .services-massage-about h3,
+    .services-massage-conditions h3,
+    .services-massage-techniques h3,
+    .services-massage-approach h3 {
+        font-size: 21px;
+    }
+
+    .services-massage-conditions li {
+        font-size: 12px;
+    }
+
+    .services-massage-image-wrapper {
+        height: 340px;
+    }
+
+    .services-massage-image-caption {
+        bottom: -15px;
+        right: 12px;
+
+        padding: 13px 15px;
+        font-size: 9px;
+    }
+
+}
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+
+    .services-massage-container {
+        padding: 0 14px;
+    }
+
+    .services-massage-content h2 {
+        font-size: 29px;
+    }
+
+    .services-massage-image-wrapper {
+        height: 290px;
+    }
+
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .services-massage.is-visible .services-massage-content,
+
+    .services-massage.is-visible .services-massage-visual {
+        animation: none;
+    }
+
+    .services-massage-image {
+        transition: none;
+    }
+
+}
+
+
+
+/* =========================================
+   PHYSIOCARE CLINIC
+   ACL & KNEE REHABILITATION
+========================================= */
+
+.services-acl {
+    width: 100%;
+    padding: 105px 0 115px;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+/* CONTAINER */
+
+.services-acl-container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 35px;
+
+    display: grid;
+    grid-template-columns: 0.92fr 1.08fr;
+    align-items: center;
+    gap: 75px;
+}
+
+/* IMAGE */
+
+.services-acl-visual {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+}
+
+.services-acl-image-wrapper {
+    position: relative;
+    height: 660px;
+    overflow: hidden;
+    border-radius: 5px;
+
+    box-shadow: 0 22px 50px rgba(6, 51, 88, 0.11);
+}
+
+.services-acl-image-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 95px;
+    height: 5px;
+    background: var(--accent);
+    z-index: 2;
+}
+
+.services-acl-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.8s ease;
+}
+
+.services-acl-image-wrapper:hover .services-acl-image {
+    transform: scale(1.04);
+}
+
+/* IMAGE CAPTION */
+
+.services-acl-image-caption {
+    position: absolute;
+    right: -18px;
+    bottom: -20px;
+
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    padding: 18px 22px;
+    background: var(--primary);
+    color: #ffffff;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+
+    box-shadow: 0 12px 30px rgba(6, 51, 88, 0.15);
+}
+
+.services-acl-caption-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+}
+
+/* CONTENT */
+
+.services-acl-content {
+    min-width: 0;
+}
+
+.services-acl-label {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 24px;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--accent-dark);
+}
+
+.services-acl-line {
+    width: 28px;
+    height: 2px;
+    background: var(--accent);
+    flex-shrink: 0;
+}
+
+/* HEADINGS */
+
+.services-acl-content h2 {
+    margin-bottom: 15px;
+
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(34px, 3.5vw, 49px);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -1px;
+
+    color: var(--primary);
+}
+
+.services-acl-content h2 em {
+    font-weight: 400;
+    color: var(--accent-dark);
+}
+
+.services-acl-arabic {
+    margin-bottom: 28px;
+    font-size: 17px;
+    line-height: 1.8;
+    text-align: left;
+    color: var(--muted);
+}
+
+.services-acl-highlight {
+    margin-bottom: 20px;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.7px;
+    line-height: 1.7;
+    color: var(--accent-dark);
+}
+
+/* PARAGRAPHS */
+
+.services-acl-description,
+.services-acl-block p {
+    margin-bottom: 18px;
+    font-size: 14px;
+    line-height: 1.95;
+    color: var(--muted);
+}
+
+/* SUBSECTIONS */
+
+.services-acl-block {
+    margin-top: 35px;
+}
+
+.services-acl-block h3 {
+    margin-bottom: 19px;
+
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 1.4;
+
+    color: var(--primary);
+}
+
+/* CONDITIONS AND TREATMENTS */
+
+.services-acl-list {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.services-acl-list li {
+    position: relative;
+    padding-left: 27px;
+
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--muted);
+}
+
+.services-acl-list li::before {
+    content: "→";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    font-size: 17px;
+    color: var(--accent-dark);
+}
+
+.services-acl-list strong {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* =========================================
+   SCROLL ENTRANCE EFFECT
+========================================= */
+
+@keyframes aclFadeLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes aclFadeRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.services-acl.is-visible .services-acl-visual {
+    animation: aclFadeLeft 0.9s ease both;
+}
+
+.services-acl.is-visible .services-acl-content {
+    animation: aclFadeRight 0.9s ease 0.12s both;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .services-acl {
+        padding: 85px 0 100px;
+    }
+
+    .services-acl-container {
+        padding: 0 25px;
+        gap: 45px;
+    }
+
+    .services-acl-image-wrapper {
+        height: 580px;
+    }
+
+    .services-acl-content h2 {
+        font-size: 40px;
+    }
+}
+
+/* =========================================
+   SMALL TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .services-acl-container {
+        grid-template-columns: 1fr;
+        gap: 55px;
+    }
+
+    .services-acl-content {
+        order: 1;
+        max-width: 750px;
+    }
+
+    .services-acl-visual {
+        order: 2;
+        max-width: 750px;
+    }
+
+    .services-acl-image-wrapper {
+        height: 480px;
+    }
+
+    .services-acl-content h2 {
+        font-size: 42px;
+    }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .services-acl {
+        padding: 65px 0 80px;
+    }
+
+    .services-acl-container {
+        padding: 0 22px;
+        gap: 45px;
+    }
+
+    .services-acl-content h2 {
+        font-size: 37px;
+    }
+
+    .services-acl-arabic {
+        font-size: 15px;
+    }
+
+    .services-acl-description,
+    .services-acl-block p,
+    .services-acl-list li {
+        font-size: 13px;
+        line-height: 1.85;
+    }
+
+    .services-acl-image-wrapper {
+        height: 420px;
+    }
+
+    .services-acl-image-caption {
+        right: 15px;
+    }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .services-acl {
+        padding: 55px 0 70px;
+    }
+
+    .services-acl-container {
+        padding: 0 17px;
+        gap: 40px;
+    }
+
+    .services-acl-label {
+        font-size: 9px;
+        letter-spacing: 1.3px;
+    }
+
+    .services-acl-content h2 {
+        font-size: 32px;
+    }
+
+    .services-acl-arabic {
+        font-size: 14px;
+        margin-bottom: 23px;
+    }
+
+    .services-acl-highlight {
+        font-size: 10px;
+        letter-spacing: 1.2px;
+    }
+
+    .services-acl-description,
+    .services-acl-block p,
+    .services-acl-list li {
+        font-size: 12px;
+    }
+
+    .services-acl-block h3 {
+        font-size: 21px;
+    }
+
+    .services-acl-image-wrapper {
+        height: 340px;
+    }
+
+    .services-acl-image-caption {
+        right: 12px;
+        bottom: -15px;
+        padding: 13px 15px;
+        font-size: 9px;
+        letter-spacing: 0.6px;
+    }
+}
+
+@media (max-width: 360px) {
+
+    .services-acl-container {
+        padding: 0 14px;
+    }
+
+    .services-acl-content h2 {
+        font-size: 29px;
+    }
+
+    .services-acl-image-wrapper {
+        height: 290px;
+    }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .services-acl.is-visible .services-acl-visual,
+    .services-acl.is-visible .services-acl-content {
+        animation: none;
+    }
+
+    .services-acl-image {
+        transition: none;
+    }
+}
+
+
+/* =========================================
+   PHYSIOCARE CLINIC
+   FOOTBALL INJURY REHABILITATION
+========================================= */
+
+.services-football {
+    position: relative;
+    width: 100%;
+    padding: 105px 0 115px;
+    background: #f7f6f3;
+    overflow: hidden;
+}
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.services-football-container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 35px;
+
+    display: grid;
+    grid-template-columns: 1.08fr 0.92fr;
+    align-items: center;
+    gap: 75px;
+}
+
+/* =========================================
+   LEFT SIDE CONTENT
+========================================= */
+
+.services-football-content {
+    min-width: 0;
+}
+
+/* SECTION LABEL */
+
+.services-football-label {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 24px;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    color: var(--accent-dark);
+}
+
+.services-football-line {
+    display: block;
+    width: 28px;
+    height: 2px;
+    background: var(--accent);
+    flex-shrink: 0;
+}
+
+/* =========================================
+   MAIN HEADING
+========================================= */
+
+.services-football-content h2 {
+    margin-bottom: 15px;
+
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(34px, 3.5vw, 49px);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -1px;
+
+    color: var(--primary);
+}
+
+.services-football-content h2 em {
+    font-weight: 400;
+    color: var(--accent-dark);
+}
+
+/* ARABIC SUBTITLE */
+
+.services-football-arabic {
+    margin-bottom: 28px;
+
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.8;
+    text-align: left;
+
+    color: var(--muted);
+}
+
+/* HIGHLIGHT */
+
+.services-football-highlight {
+    margin-bottom: 20px;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.7px;
+    line-height: 1.7;
+
+    color: var(--accent-dark);
+}
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.services-football-description {
+    margin-bottom: 20px;
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.95;
+
+    color: var(--muted);
+}
+
+/* =========================================
+   CONTENT BLOCKS
+========================================= */
+
+.services-football-block {
+    margin-top: 35px;
+}
+
+.services-football-block h3 {
+    margin-bottom: 20px;
+
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 1.4;
+
+    color: var(--primary);
+}
+
+.services-football-block p {
+    margin-bottom: 17px;
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.95;
+
+    color: var(--muted);
+}
+
+/* =========================================
+   CONDITIONS & TREATMENT LISTS
+========================================= */
+
+.services-football-list {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.services-football-list li {
+    position: relative;
+    padding-left: 27px;
+
+    font-size: 14px;
+    line-height: 1.75;
+
+    color: var(--muted);
+}
+
+/* GREEN ARROWS */
+
+.services-football-list li::before {
+    content: "→";
+
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    font-size: 17px;
+    color: var(--accent-dark);
+}
+
+.services-football-list li strong {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* =========================================
+   RIGHT SIDE IMAGE
+========================================= */
+
+.services-football-visual {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+}
+
+.services-football-image-wrapper {
+    position: relative;
+
+    width: 100%;
+    height: 660px;
+
+    overflow: hidden;
+    border-radius: 5px;
+
+    box-shadow: 0 25px 55px rgba(6, 51, 88, 0.12);
+}
+
+.services-football-image {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.8s ease;
+}
+
+.services-football-image-wrapper:hover .services-football-image {
+    transform: scale(1.04);
+}
+
+/* GREEN DECORATIVE LINE */
+
+.services-football-image-wrapper::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 95px;
+    height: 5px;
+
+    background: var(--accent);
+    z-index: 2;
+}
+
+/* =========================================
+   IMAGE CAPTION
+========================================= */
+
+.services-football-image-caption {
+    position: absolute;
+    bottom: -20px;
+    left: -20px;
+
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    padding: 18px 22px;
+
+    background: var(--primary);
+    color: #ffffff;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+
+    box-shadow: 0 12px 30px rgba(6, 51, 88, 0.15);
+}
+
+.services-football-caption-dot {
+    width: 8px;
+    height: 8px;
+
+    background: var(--accent);
+    border-radius: 50%;
+
+    flex-shrink: 0;
+}
+
+/* =========================================
+   AUTOMATIC ENTRANCE ANIMATIONS
+========================================= */
+
+@keyframes footballFadeLeft {
+
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes footballFadeRight {
+
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.services-football.is-visible .services-football-content {
+    animation: footballFadeLeft 0.9s ease both;
+}
+
+.services-football.is-visible .services-football-visual {
+    animation: footballFadeRight 0.95s ease 0.15s both;
+}
+
+/* =========================================
+   LARGE TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .services-football {
+        padding: 85px 0 100px;
+    }
+
+    .services-football-container {
+        padding: 0 25px;
+        gap: 45px;
+    }
+
+    .services-football-content h2 {
+        font-size: 40px;
+    }
+
+    .services-football-image-wrapper {
+        height: 580px;
+    }
+
+    .services-football-description,
+    .services-football-block p,
+    .services-football-list li {
+        font-size: 13px;
+    }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .services-football-container {
+        grid-template-columns: 1fr;
+        gap: 55px;
+    }
+
+    .services-football-content {
+        order: 1;
+        max-width: 750px;
+    }
+
+    .services-football-visual {
+        order: 2;
+        max-width: 750px;
+    }
+
+    .services-football-image-wrapper {
+        height: 480px;
+    }
+
+    .services-football-content h2 {
+        font-size: 42px;
+    }
+
+    .services-football-description,
+    .services-football-block p,
+    .services-football-list li {
+        font-size: 14px;
+    }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .services-football {
+        padding: 65px 0 80px;
+    }
+
+    .services-football-container {
+        padding: 0 22px;
+        gap: 45px;
+    }
+
+    .services-football-content h2 {
+        font-size: 37px;
+    }
+
+    .services-football-arabic {
+        font-size: 15px;
+    }
+
+    .services-football-description,
+    .services-football-block p,
+    .services-football-list li {
+        font-size: 13px;
+        line-height: 1.85;
+    }
+
+    .services-football-image-wrapper {
+        height: 420px;
+    }
+
+    .services-football-image-caption {
+        left: 15px;
+    }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .services-football {
+        padding: 55px 0 70px;
+    }
+
+    .services-football-container {
+        padding: 0 17px;
+        gap: 40px;
+    }
+
+    .services-football-label {
+        font-size: 9px;
+        letter-spacing: 1.3px;
+    }
+
+    .services-football-content h2 {
+        font-size: 32px;
+    }
+
+    .services-football-arabic {
+        font-size: 14px;
+        margin-bottom: 23px;
+    }
+
+    .services-football-highlight {
+        font-size: 10px;
+        letter-spacing: 1.2px;
+    }
+
+    .services-football-description,
+    .services-football-block p,
+    .services-football-list li {
+        font-size: 12px;
+    }
+
+    .services-football-block h3 {
+        font-size: 21px;
+    }
+
+    .services-football-image-wrapper {
+        height: 340px;
+    }
+
+    .services-football-image-caption {
+        bottom: -15px;
+        left: 12px;
+
+        padding: 13px 15px;
+        font-size: 9px;
+        letter-spacing: 0.6px;
+    }
+}
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+
+    .services-football-container {
+        padding: 0 14px;
+    }
+
+    .services-football-content h2 {
+        font-size: 29px;
+    }
+
+    .services-football-image-wrapper {
+        height: 290px;
+    }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .services-football.is-visible .services-football-content,
+
+    .services-football.is-visible .services-football-visual {
+        animation: none;
+    }
+
+    .services-football-image {
+        transition: none;
+    }
+}

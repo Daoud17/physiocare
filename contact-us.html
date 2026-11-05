@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us | PhysioCare Clinic</title>
+
+    <meta name="description"
+        content="Contact PhysioCare Clinic in Beirut for sports physiotherapy, football injury rehabilitation, and physiotherapy appointments.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/img/physiocare-logo.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- =====================================
+       HEADER
+  ====================================== -->
+
+    <header class="site-header">
+
+        <div class="header-container">
+
+            <!-- Logo -->
+            <a href="index.html" class="header-logo" aria-label="PhysioCare Clinic Home">
+
+                <img src="assets/img/physiocare-logo.png" alt="PhysioCare Clinic Logo">
+
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav" aria-label="Main navigation">
+
+                <a href="index.html" class="nav-link">
+                    Home
+                </a>
+
+                <a href="about-us.html" class="nav-link">
+                    About Us
+                </a>
+
+                <a href="services.html" class="nav-link">
+                    Services
+                </a>
+
+                <a href="contact-us.html" class="nav-link active" aria-current="page">
+                    Contact Us
+                </a>
+
+            </nav>
+
+            <!-- Hamburger Button -->
+            <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false"
+                aria-controls="mobile-nav">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </div>
+
+        <!-- Mobile Navigation -->
+        <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" inert>
+
+            <a href="index.html" class="mobile-link">
+                Home
+            </a>
+
+            <a href="about-us.html" class="mobile-link">
+                About Us
+            </a>
+
+            <a href="services.html" class="mobile-link">
+                Services
+            </a>
+
+            <a href="contact-us.html" class="mobile-link active" aria-current="page">
+                Contact Us
+            </a>
+
+        </nav>
+
+    </header>
+
+    <!-- =====================================
+       MAIN CONTENT
+  ====================================== -->
+
+    <main>
+
+
+        <!-- =====================================
+     CONTACT US - INTRO SECTION
+====================================== -->
+
+        <section class="contact-intro">
+
+            <div class="contact-intro-container">
+
+                <!-- Section Label -->
+                <div class="contact-intro-label">
+                    <span class="contact-label-line"></span>
+                    <span>GET IN TOUCH</span>
+                </div>
+
+                <!-- Main Heading -->
+                <h1 class="contact-intro-title">
+                    Start Your Recovery <span>— Today</span>
+                </h1>
+
+                <!-- Contact Details -->
+                <div class="contact-intro-details">
+
+                    <!-- Phone & WhatsApp -->
+                    <div class="contact-detail-block">
+
+                        <h2>PHONE &amp; WHATSAPP</h2>
+
+                        <a href="tel:+96176926173" class="contact-detail-value">
+                            +961 76 926 173
+                        </a>
+
+                        <p>
+                            <a href="tel:+96176926173">Call Us</a>
+                            <span class="contact-separator">or</span>
+                            <a href="https://wa.me/96176926173" target="_blank" rel="noopener noreferrer">
+                                WhatsApp
+                            </a>
+                        </p>
+
+                    </div>
+
+                    <!-- Email -->
+                    <div class="contact-detail-block">
+
+                        <h2>EMAIL ADDRESS</h2>
+
+                        <a href="mailto:info@physiocare-clinic.com" class="contact-detail-value contact-email">
+                            info@physiocare-clinic.com
+                        </a>
+
+                        <p>
+                            Send us an email for inquiries and appointments.
+                        </p>
+
+                    </div>
+
+                    <!-- Address -->
+                    <div class="contact-detail-block">
+
+                        <h2>ADDRESS</h2>
+
+                        <a href="https://www.google.com/maps/search/?api=1&query=Alnahar+Building+Wigand+Street+Beirut+Lebanon"
+                            target="_blank" rel="noopener noreferrer" class="contact-detail-value contact-address-link">
+                            Alnahar Building
+                        </a>
+
+                        <p>
+                            Wigand Street, Marfaa, Beirut<br>
+                            Ground Floor — Lebanon
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+     CONTACT US - FORM SECTION
+====================================== -->
+
+        <section class="contact-form-section" id="contact-form">
+
+            <div class="contact-form-container">
+
+                <!-- Section Heading -->
+                <div class="contact-form-heading">
+
+                    <div class="contact-form-label">
+                        <span class="contact-form-line"></span>
+                        <span>CONTACT FORM</span>
+                    </div>
+
+                    <h2>How Can We Help You?</h2>
+
+                    <p>
+                        Whether you're recovering from a sports injury,
+                        looking to improve your performance, or seeking
+                        physiotherapy treatment, we're here to help.
+                        Fill out the form below and our team will get
+                        back to you.
+                    </p>
+
+                </div>
+
+                <!-- Form -->
+                <form id="physiocare-contact-form" class="physiocare-form">
+
+                    <div class="form-grid">
+
+                        <!-- Full Name -->
+                        <div class="form-group">
+
+                            <label for="full-name">
+                                Full Name <span>*</span>
+                            </label>
+
+                            <input type="text" id="full-name" name="full_name" placeholder="Enter your full name"
+                                autocomplete="name" minlength="2" maxlength="100" required>
+
+                        </div>
+
+                        <!-- Email -->
+                        <div class="form-group">
+
+                            <label for="email">
+                                Email Address <span>*</span>
+                            </label>
+
+                            <input type="email" id="email" name="email" placeholder="Enter your email address"
+                                autocomplete="email" required>
+
+                        </div>
+
+                        <!-- Lebanese Phone Number -->
+                        <div class="form-group">
+
+                            <label for="phone">
+                                Contact Number <span>*</span>
+                            </label>
+
+                            <div class="phone-input-wrapper">
+
+                                <span class="phone-prefix">+961</span>
+
+                                <input type="tel" id="phone" name="phone" placeholder="76 926 173" inputmode="tel"
+                                    autocomplete="tel-national" pattern="0?[0-9]{7,8}"
+                                    title="Enter a valid Lebanese phone number without +961" required>
+
+                            </div>
+
+                            <small>
+                                Lebanese phone number only
+                            </small>
+
+                        </div>
+
+                        <!-- Reason For Visit -->
+                        <div class="form-group">
+
+                            <label for="visit-reason">
+                                Reason for Your Visit <span>*</span>
+                            </label>
+
+                            <select id="visit-reason" name="visit_reason" required>
+
+                                <option value="" disabled selected>
+                                    Select a service
+                                </option>
+
+                                <option value="Football Injury Rehabilitation">
+                                    Football Injury Rehabilitation
+                                </option>
+
+                                <option value="Sports Physiotherapy">
+                                    Sports Physiotherapy
+                                </option>
+
+                                <option value="ACL & Knee Rehabilitation">
+                                    ACL & Knee Rehabilitation
+                                </option>
+
+                                <option value="Muscle & Ligament Injuries">
+                                    Muscle & Ligament Injuries
+                                </option>
+
+                                <option value="Post-Surgical Rehabilitation">
+                                    Post-Surgical Rehabilitation
+                                </option>
+
+                                <option value="Clinical Physiotherapy">
+                                    Clinical Physiotherapy
+                                </option>
+
+                                <option value="Injury Prevention">
+                                    Injury Prevention
+                                </option>
+
+                                <option value="Other">
+                                    Other / General Inquiry
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <!-- Message -->
+                        <div class="form-group form-full-width">
+
+                            <label for="message">
+                                Your Message <span>*</span>
+                            </label>
+
+                            <textarea id="message" name="message" rows="6" placeholder="Tell us how we can help you..."
+                                minlength="10" maxlength="2000" required></textarea>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Submit -->
+                    <div class="form-submit-area">
+
+                        <button type="submit" class="contact-submit-btn">
+                            <span>Send Message</span>
+
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M5 12h14"></path>
+                                <path d="m12 5 7 7-7 7"></path>
+                            </svg>
+                        </button>
+
+                    </div>
+
+                    <!-- Success Message -->
+                    <div id="form-success-message" class="form-success-message" role="status" aria-live="polite" hidden>
+                        <span class="success-icon" aria-hidden="true">✓</span>
+
+                        <div>
+                            <strong>Thank you for your message!</strong>
+                            <p>
+                                Your form has been completed successfully.
+                            </p>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+
+    </main>
+
+    <!-- =====================================
+       FOOTER
+  ====================================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+            <!-- Left: Logo -->
+            <div class="footer-brand">
+
+                <a href="index.html" aria-label="PhysioCare Clinic Home">
+
+                    <img src="assets/img/physiocare-logo.png" alt="PhysioCare Clinic Logo">
+
+                </a>
+
+            </div>
+
+            <!-- Middle: Address -->
+            <div class="footer-info footer-address">
+
+                <h3>Our Location</h3>
+
+                <p>
+                    Beirut, Marfaa, Wigand Street<br>
+                    Alnahar Building, Ground Floor<br>
+                    Lebanon
+                </p>
+
+            </div>
+
+            <!-- Right: Contact -->
+            <div class="footer-info footer-contact">
+
+                <h3>Contact Us</h3>
+
+                <a href="mailto:info@physiocare-clinic.com">
+                    info@physiocare-clinic.com
+                </a>
+
+                <a href="tel:+96176926173">
+                    +961 76 926 173
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="assets/js/app.js"></script>
+
+</body>
+
+</html>
